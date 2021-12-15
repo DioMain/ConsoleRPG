@@ -3,7 +3,6 @@
 #include "DefaultMath.h"
 #include "GraphicEngine.h"
 
-
 using namespace std;
 
 int main() {

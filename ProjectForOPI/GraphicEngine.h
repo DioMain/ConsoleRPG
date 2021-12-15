@@ -3,13 +3,18 @@
 #include <string>
 #include "DefaultMath.h"
 
+using namespace std;
+
 class GameMap
 {
 public:
 	char defaultSymbol;
+
+	GameMap() {
+
+	}
 	
 private:
-	//Vector<Char>
 	vector<vector<char>> charMap;
 	Vector2 size;
 
