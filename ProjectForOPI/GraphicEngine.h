@@ -28,7 +28,7 @@ public:
 private:
 
 };
-//Testificate!!!
+
 class GameMap
 {
 public:
