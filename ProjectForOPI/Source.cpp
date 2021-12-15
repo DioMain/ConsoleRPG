@@ -8,7 +8,7 @@ using namespace std;
 int main() {
 	setlocale(LC_ALL, "ru");
 
-	GameMap testMap(Vector2(10, 5), '.');
+	GameMap testMap = GameMap(Vector2(10, 10), '.');
 
 	testMap.addGameObject(GameObject(Vector2(0, 0), '#', "first"));
 	testMap.addGameObject(GameObject(Vector2(1, 1), '/', "second"));

@@ -1,5 +1,6 @@
 #pragma once
 
+// Class which have two parameters
 class Vector2
 {
 public:
@@ -7,24 +8,49 @@ public:
 	int x;
 	int y;
 
+	/// <summary>
+	/// Initialization : Инициализация
+	/// </summary>
+	/// <param name="x">Пораметр X</param>
+	/// <param name="y">Пораметр Y</param>
 	Vector2(int x, int y) {
 		this->x = x;
 		this->y = y;
 	}
 
+	/// <summary>
+	/// Initialization : Инициализация
+	/// </summary>
 	Vector2() {
 		this->x = 0;
 		this->y = 0;
 	}
 
+	/// <summary>
+	/// Vector function : Функция для вектора
+	/// </summary>
+	/// <param name="vec">Vector2</param>
+	/// <returns>Length of vector : Длинну вектора</returns>
 	static float Length(Vector2 vec) {
 		return sqrt(pow(vec.x, 2) + pow(vec.y, 2));
 	}
 
+	/// <summary>
+	/// Vectors function : Функция для векторов
+	/// </summary>
+	/// <param name="vec0">First Vector2</param>
+	/// <param name="vec1">Second Vector2</param>
+	/// <returns>Dot of two vectors : Скалярное произведение двух векторов</returns>
 	static float Dot(Vector2 vec0, Vector2 vec1) {
 		return vec0.x * vec1.x + vec0.y * vec1.y;
 	}
 
+	/// <summary>
+	/// Vectors function : Функция для векторов
+	/// </summary>
+	/// <param name="vec0">First Vector2</param>
+	/// <param name="vec1">Second Vector2</param>
+	/// <returns>Angle between two vectors : Угол меджу двумя векторами</returns>
 	static float Angle(Vector2 vec0, Vector2 vec1) {
 		return Dot(vec0, vec1) / (Length(vec0) * Length(vec1));
 	}
