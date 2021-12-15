@@ -125,7 +125,7 @@ public:
 	/// <param name="showWarning">Show message that GameObject is not exist?</param>
 	/// <returns>GameObject in current position</returns>
 	GameObject getGameObjectByMapPosition(Vector2 pos, bool showWarning = true) {
-		GameObject obj(Vector2(), ' ', "null");
+		GameObject obj;
 
 		for(int i = 0; i < GameObjects.size(); i++)
 		{
@@ -194,7 +194,7 @@ public:
 	/// <param name="id">ID</param>
 	/// <returns>GameObject with this id</returns>
 	GameObject getGameObjectById(int id) {
-		return GameObjects[id];
+		return &GameObjects[id];
 	}
 
 private:

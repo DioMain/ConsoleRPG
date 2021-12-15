@@ -15,9 +15,8 @@ int main() {
 
 	testMap.draw();
 
-	cout << endl;
-	//ÏÈÄÎĞ
-	testMap.deleteGameObjectById(0);
+	cout << testMap.getGameObjectById(1).position.x << endl;
+	cout << testMap.getGameObjectById(1).position.y << endl;
 
 	testMap.draw();
 }
