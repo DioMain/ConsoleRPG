@@ -8,6 +8,10 @@ using namespace std;
 int main() {
 	setlocale(LC_ALL, "ru");
 
+	//Test 0
+
+
+
 	GameMap testMap(Vector2(10, 5), '.');
 
 	testMap.addGameObject(GameObject(Vector2(0, 0), '#', "first"));
