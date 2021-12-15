@@ -6,18 +6,9 @@
 using namespace std;
 
 int main() {
-	Vector2 t1(2, 3);
+	GameMap test(Vector2(5, 5), GameObject('.', "Floor"));
 
-	Vector2 t2(14, 4);
+	test.draw();
 
-	Vector2 t3 = t1 + t2;
-
-	int a = 1;
-	int b = 1;
-	int ab = 2;
-
-	int len = Vector2::Length(t3);
-
-	cout << t3.x << " " << t3.y << endl << "length: " << len << endl;
-	cout << "Angle t1, t2 = " << Vector2::Angle(t1, t2) << endl;
+	cout << test.getGameObjectByMapPosition(Vector2(0, 0)).tag << endl;
 }
