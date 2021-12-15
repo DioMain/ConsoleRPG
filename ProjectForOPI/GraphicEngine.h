@@ -15,7 +15,7 @@ public:
 	Vector2 position; // position on map in Vector2
 
 	/// <summary>
-	/// Initialization : Èíèöèàëèçàöèÿ
+	/// Initialization
 	/// </summary>
 	/// <param name="position">Ïîçèöèÿ íà êàðòå â Vector2</param>
 	/// <param name="Symbol">Ñèìâîë îáúåêòà</param>
