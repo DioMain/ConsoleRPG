@@ -102,6 +102,10 @@ public:
 		return obj;
 	}
 
+	GameObject getGameObjectById(int id) {
+
+	}
+
 private:
 
 	vector<GameObject> GameObjects;
