@@ -194,7 +194,7 @@ public:
 	/// <param name="id">ID</param>
 	/// <returns>GameObject with this id</returns>
 	GameObject getGameObjectById(int id) {
-		return &GameObjects[id];
+		return GameObjects[id];
 	}
 
 private:
