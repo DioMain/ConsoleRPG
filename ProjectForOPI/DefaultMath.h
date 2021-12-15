@@ -46,3 +46,7 @@ Vector2 operator - (Vector2 left, Vector2 right) {
 
 	return vec;
 }
+
+bool operator == (Vector2 left, Vector2 right) {
+	return (left.x == right.x && left.y == right.y) ? true : false;
+}
