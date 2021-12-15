@@ -16,11 +16,11 @@ public:
 	Vector2 position; // position on map in Vector2
 
 	/// <summary>
-	/// Initialization : Èíèöèàëèçàöèÿ
+	/// Initialization
 	/// </summary>
-	/// <param name="position">Ïîçèöèÿ íà êàðòå â Vector2</param>
-	/// <param name="Symbol">Ñèìâîë îáúåêòà</param>
-	/// <param name="tag">Òåã</param>
+	/// <param name="position">position in Vector2</param>
+	/// <param name="Symbol">Object symbol</param>
+	/// <param name="tag">Tag</param>
 	GameObject(Vector2 position, char Symbol, string tag = "") {
 		this->position = position;
 		this->Symbol = Symbol;
@@ -28,7 +28,7 @@ public:
 	}
 
 	/// <summary>
-	/// Initialization : Èíèöèàëèçàöèÿ
+	/// Initialization
 	/// </summary>
 	GameObject() {
 		this->position = Vector2();
@@ -49,10 +49,10 @@ public:
 	char defaultSymbol; //Standard background symbol
 
 	/// <summary>
-	/// Initialization : Èíèöèàëèçàöèÿ
+	/// Initialization
 	/// </summary>
-	/// <param name="size">Ðàçìåð êàðòû â Vector2</param>
-	/// <param name="defaultSymbol">Ñòàíäàðòíûé ñèìâîë (äëÿ çàäíåãî ôîíà)</param>
+	/// <param name="size">Map size in Vector2</param>
+	/// <param name="defaultSymbol">Standard symbol (for background)</param>
 	GameMap(Vector2 size, char defaultSymbol) {
 		this->size = size;
 		this->defaultSymbol = defaultSymbol;
@@ -68,23 +68,23 @@ public:
 	}
 
 	/// <summary>
-	/// Add GameObject to map : Äîáàâèòü GameObject â êàðòó
+	/// Add GameObject to map
 	/// </summary>
-	/// <param name="gameObject">Èãðîâîé îáúåêò</param>
+	/// <param name="gameObject">GameObject</param>
 	void addGameObject(GameObject gameObject) {
 		GameObjects.push_back(gameObject);
 	}
 	
 	/// <summary>
-	/// Delete GameObject from map : Óäàëÿåò GameObject èç êàðòû
+	/// Delete GameObject from map
 	/// </summary>
-	/// <param name="id">Èäåíòèôèêàòîð</param>
+	/// <param name="id">ID</param>
 	void deleteGameObjectById(int id) {
 		GameObjects.erase(GameObjects.begin() + id);
 	}
 
 	/// <summary>
-	/// This func drawing map from symbols on console window : Ýòà ôóíêöèÿ ðèñîâàíèÿ êàðòû èç ñèìâîëîâ â îêíå êîíñîëè
+	/// This func drawing map from symbols on console window
 	/// </summary>
 	void draw() {
 
@@ -119,11 +119,11 @@ public:
 	}
 	
 	/// <summary>
-	/// GameObject search : Ïîèñê GameObject-òà
+	/// GameObject search
 	/// </summary>
-	/// <param name="pos">Ïîçèöèÿ GameObject-òà (Â Vector2)</param>
-	/// <param name="showWarning">Âûâîäèòü ñîîáùåíèå åñëè íè÷åãî íå íàéäåíî?</param>
-	/// <returns>GameObject in current position : GameObject â ýòîé ïîçèöèè</returns>
+	/// <param name="pos">position of Object (in Vector2)</param>
+	/// <param name="showWarning">Show message that GameObject is not exist?</param>
+	/// <returns>GameObject in current position</returns>
 	GameObject getGameObjectByMapPosition(Vector2 pos, bool showWarning = true) {
 		GameObject obj(Vector2(), ' ', "null");
 
@@ -138,11 +138,11 @@ public:
 	}
 
 	/// <summary>
-	/// GameObject search : Ïîèñê GameObject
+	/// GameObject search
 	/// </summary>
-	/// <param name="tag">Òåã GameObject-òà</param>
-	/// <param name="showWarning">Âûâîäèòü ñîîáùåíèå åñëè íè÷åãî íå íàéäåíî?</param>
-	/// <returns>GameObject with this tag : GameObject ñ ýòèì òåãîì</returns>
+	/// <param name="tag">Tag of GameObjects</param>
+	/// <param name="showWarning">Show message that GameObject is not exist?</param>
+	/// <returns>GameObject with this tag</returns>
 	GameObject getGameObjectByTag(string tag, bool showWarning = true) {
 		GameObject obj(Vector2(), ' ', "null");
 
@@ -157,10 +157,10 @@ public:
 	}
 
 	/// <summary>
-	/// GameObjects search : Ïîèñê GameObject-òîâ
+	/// GameObjects search
 	/// </summary>
-	/// <param name="pos">Ïîçèöèÿ GameObject-òîâ (Â Vector2)</param>
-	/// <returns>Dynamic array (vector) from GameObjects : Äèíàìè÷åñêèé ìàññèâ (vector) èç GameObject-òîâ</returns>
+	/// <param name="pos">Position of GameObjects (in Vector2)</param>
+	/// <returns>Dynamic array (vector) from GameObjects</returns>
 	vector<GameObject> getGameObjectsByMapPosition(Vector2 pos) {
 		vector<GameObject> objs;
 
@@ -173,10 +173,10 @@ public:
 	}
 
 	/// <summary>
-	/// GameObjects search : Ïîèñê GameObject-òîâ
+	/// GameObjects search
 	/// </summary>
-	/// <param name="tag">Òåã GameObject-òîâ</param>
-	/// <returns>Dynamic array (vector) from GameObjects : Äèíàìè÷åñêèé ìàññèâ (vector) èç GameObject-òîâ</returns>
+	/// <param name="tag">Tag of GameObjects</param>
+	/// <returns>Dynamic array (vector) from GameObjects</returns>
 	vector<GameObject> getGameObjectsByTag(string tag) {
 		vector<GameObject> objs;
 
@@ -188,6 +188,11 @@ public:
 		return objs;
 	}
 
+	/// <summary>
+	/// GameObject search
+	/// </summary>
+	/// <param name="id">ID</param>
+	/// <returns>GameObject with this id</returns>
 	GameObject getGameObjectById(int id) {
 		return GameObjects[id];
 	}
