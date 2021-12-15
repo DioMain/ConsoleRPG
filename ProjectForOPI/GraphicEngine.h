@@ -8,15 +8,24 @@ using namespace std;
 class GameMap
 {
 public:
+
 	char defaultSymbol;
 
-	GameMap() {
+	GameMap(Vector2 size, char defaultSymbol) {
+		this->size = size;
+		this->defaultSymbol = defaultSymbol;
+
 
 	}
 	
 private:
+
 	vector<vector<char>> charMap;
 	Vector2 size;
+
+	void RESIZE() {
+		
+	}
 
 };
 
