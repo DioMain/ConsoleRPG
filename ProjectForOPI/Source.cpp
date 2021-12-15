@@ -8,9 +8,8 @@ using namespace std;
 int main() {
 	setlocale(LC_ALL, "ru");
 
-	//Test 0
 
-
+	//Test 1
 
 	GameMap testMap(Vector2(10, 5), '.');
 
