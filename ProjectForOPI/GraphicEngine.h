@@ -5,6 +5,7 @@
 
 using namespace std;
 
+
 // This class contains information about the game object (Symbol, position and tag)
 class GameObject
 {
@@ -15,11 +16,11 @@ public:
 	Vector2 position; // position on map in Vector2
 
 	/// <summary>
-	/// Initialization : Инициализация
+	/// Initialization : Г€Г­ГЁГ¶ГЁГ Г«ГЁГ§Г Г¶ГЁГї
 	/// </summary>
-	/// <param name="position">Позиция на карте в Vector2</param>
-	/// <param name="Symbol">Символ объекта</param>
-	/// <param name="tag">Тег</param>
+	/// <param name="position">ГЏГ®Г§ГЁГ¶ГЁГї Г­Г  ГЄГ Г°ГІГҐ Гў Vector2</param>
+	/// <param name="Symbol">Г‘ГЁГ¬ГўГ®Г« Г®ГЎГєГҐГЄГІГ </param>
+	/// <param name="tag">Г’ГҐГЈ</param>
 	GameObject(Vector2 position, char Symbol, string tag = "") {
 		this->position = position;
 		this->Symbol = Symbol;
@@ -27,7 +28,7 @@ public:
 	}
 
 	/// <summary>
-	/// Initialization : Инициализация
+	/// Initialization : Г€Г­ГЁГ¶ГЁГ Г«ГЁГ§Г Г¶ГЁГї
 	/// </summary>
 	GameObject() {
 		this->position = Vector2();
@@ -48,10 +49,10 @@ public:
 	char defaultSymbol; //Standard background symbol
 
 	/// <summary>
-	/// Initialization : Инициализация
+	/// Initialization : Г€Г­ГЁГ¶ГЁГ Г«ГЁГ§Г Г¶ГЁГї
 	/// </summary>
-	/// <param name="size">Размер карты в Vector2</param>
-	/// <param name="defaultSymbol">Стандартный символ (для заднего фона)</param>
+	/// <param name="size">ГђГ Г§Г¬ГҐГ° ГЄГ Г°ГІГ» Гў Vector2</param>
+	/// <param name="defaultSymbol">Г‘ГІГ Г­Г¤Г Г°ГІГ­Г»Г© Г±ГЁГ¬ГўГ®Г« (Г¤Г«Гї Г§Г Г¤Г­ГҐГЈГ® ГґГ®Г­Г )</param>
 	GameMap(Vector2 size, char defaultSymbol) {
 		this->size = size;
 		this->defaultSymbol = defaultSymbol;
@@ -67,23 +68,23 @@ public:
 	}
 
 	/// <summary>
-	/// Add GameObject to map : Добавить GameObject в карту
+	/// Add GameObject to map : Г„Г®ГЎГ ГўГЁГІГј GameObject Гў ГЄГ Г°ГІГі
 	/// </summary>
-	/// <param name="gameObject">Игровой объект</param>
+	/// <param name="gameObject">Г€ГЈГ°Г®ГўГ®Г© Г®ГЎГєГҐГЄГІ</param>
 	void addGameObject(GameObject gameObject) {
 		GameObjects.push_back(gameObject);
 	}
 	
 	/// <summary>
-	/// Delete GameObject from map : Удаляет GameObject из карты
+	/// Delete GameObject from map : Г“Г¤Г Г«ГїГҐГІ GameObject ГЁГ§ ГЄГ Г°ГІГ»
 	/// </summary>
-	/// <param name="id">Идентификатор</param>
+	/// <param name="id">Г€Г¤ГҐГ­ГІГЁГґГЁГЄГ ГІГ®Г°</param>
 	void deleteGameObjectById(int id) {
 		GameObjects.erase(GameObjects.begin() + id);
 	}
 
 	/// <summary>
-	/// This func drawing map from symbols on console window : Эта функция рисования карты из символов в окне консоли
+	/// This func drawing map from symbols on console window : ГќГІГ  ГґГіГ­ГЄГ¶ГЁГї Г°ГЁГ±Г®ГўГ Г­ГЁГї ГЄГ Г°ГІГ» ГЁГ§ Г±ГЁГ¬ГўГ®Г«Г®Гў Гў Г®ГЄГ­ГҐ ГЄГ®Г­Г±Г®Г«ГЁ
 	/// </summary>
 	void draw() {
 
@@ -118,11 +119,11 @@ public:
 	}
 	
 	/// <summary>
-	/// GameObject search : Поиск GameObject-та
+	/// GameObject search : ГЏГ®ГЁГ±ГЄ GameObject-ГІГ 
 	/// </summary>
-	/// <param name="pos">Позиция GameObject-та (В Vector2)</param>
-	/// <param name="showWarning">Выводить сообщение если ничего не найдено?</param>
-	/// <returns>GameObject in current position : GameObject в этой позиции</returns>
+	/// <param name="pos">ГЏГ®Г§ГЁГ¶ГЁГї GameObject-ГІГ  (Г‚ Vector2)</param>
+	/// <param name="showWarning">Г‚Г»ГўГ®Г¤ГЁГІГј Г±Г®Г®ГЎГ№ГҐГ­ГЁГҐ ГҐГ±Г«ГЁ Г­ГЁГ·ГҐГЈГ® Г­ГҐ Г­Г Г©Г¤ГҐГ­Г®?</param>
+	/// <returns>GameObject in current position : GameObject Гў ГЅГІГ®Г© ГЇГ®Г§ГЁГ¶ГЁГЁ</returns>
 	GameObject getGameObjectByMapPosition(Vector2 pos, bool showWarning = true) {
 		GameObject obj(Vector2(), ' ', "null");
 
@@ -137,11 +138,11 @@ public:
 	}
 
 	/// <summary>
-	/// GameObject search : Поиск GameObject
+	/// GameObject search : ГЏГ®ГЁГ±ГЄ GameObject
 	/// </summary>
-	/// <param name="tag">Тег GameObject-та</param>
-	/// <param name="showWarning">Выводить сообщение если ничего не найдено?</param>
-	/// <returns>GameObject with this tag : GameObject с этим тегом</returns>
+	/// <param name="tag">Г’ГҐГЈ GameObject-ГІГ </param>
+	/// <param name="showWarning">Г‚Г»ГўГ®Г¤ГЁГІГј Г±Г®Г®ГЎГ№ГҐГ­ГЁГҐ ГҐГ±Г«ГЁ Г­ГЁГ·ГҐГЈГ® Г­ГҐ Г­Г Г©Г¤ГҐГ­Г®?</param>
+	/// <returns>GameObject with this tag : GameObject Г± ГЅГІГЁГ¬ ГІГҐГЈГ®Г¬</returns>
 	GameObject getGameObjectByTag(string tag, bool showWarning = true) {
 		GameObject obj(Vector2(), ' ', "null");
 
@@ -156,10 +157,10 @@ public:
 	}
 
 	/// <summary>
-	/// GameObjects search : Поиск GameObject-тов
+	/// GameObjects search : ГЏГ®ГЁГ±ГЄ GameObject-ГІГ®Гў
 	/// </summary>
-	/// <param name="pos">Позиция GameObject-тов (В Vector2)</param>
-	/// <returns>Dynamic array (vector) from GameObjects : Динамический массив (vector) из GameObject-тов</returns>
+	/// <param name="pos">ГЏГ®Г§ГЁГ¶ГЁГї GameObject-ГІГ®Гў (Г‚ Vector2)</param>
+	/// <returns>Dynamic array (vector) from GameObjects : Г„ГЁГ­Г Г¬ГЁГ·ГҐГ±ГЄГЁГ© Г¬Г Г±Г±ГЁГў (vector) ГЁГ§ GameObject-ГІГ®Гў</returns>
 	vector<GameObject> getGameObjectsByMapPosition(Vector2 pos) {
 		vector<GameObject> objs;
 
@@ -172,10 +173,10 @@ public:
 	}
 
 	/// <summary>
-	/// GameObjects search : Поиск GameObject-тов
+	/// GameObjects search : ГЏГ®ГЁГ±ГЄ GameObject-ГІГ®Гў
 	/// </summary>
-	/// <param name="tag">Тег GameObject-тов</param>
-	/// <returns>Dynamic array (vector) from GameObjects : Динамический массив (vector) из GameObject-тов</returns>
+	/// <param name="tag">Г’ГҐГЈ GameObject-ГІГ®Гў</param>
+	/// <returns>Dynamic array (vector) from GameObjects : Г„ГЁГ­Г Г¬ГЁГ·ГҐГ±ГЄГЁГ© Г¬Г Г±Г±ГЁГў (vector) ГЁГ§ GameObject-ГІГ®Гў</returns>
 	vector<GameObject> getGameObjectsByTag(string tag) {
 		vector<GameObject> objs;
 
