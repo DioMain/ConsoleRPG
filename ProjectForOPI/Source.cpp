@@ -14,7 +14,7 @@ int main() {
 	testMap.addGameObject(GameObject(Vector2(1, 1), '/', "second"));
 
 	testMap.draw();
-
+	//Test
 	cout << endl;
 
 	testMap.deleteGameObjectById(0);
