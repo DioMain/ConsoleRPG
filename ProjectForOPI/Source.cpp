@@ -6,9 +6,16 @@
 using namespace std;
 
 int main() {
-	GameMap test(Vector2(5, 5), GameObject('.', "Floor"));
+	GameMap testMap(Vector2(10, 5), '.');
 
-	test.draw();
+	testMap.addGameObject(GameObject(Vector2(0, 0), '#', "first"));
+	testMap.addGameObject(GameObject(Vector2(1, 1), '/', "second"));
 
-	cout << test.getGameObjectByMapPosition(Vector2(0, 0)).tag << endl;
+	testMap.draw();
+
+	cout << endl;
+
+	testMap.deleteGameObjectById(0);
+
+	testMap.draw();
 }
