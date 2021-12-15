@@ -14,7 +14,7 @@ int main() {
 	testMap.draw();
 
 	cout << endl;
-
+	//ÏÈÄÎĞ
 	testMap.deleteGameObjectById(0);
 
 	testMap.draw();
