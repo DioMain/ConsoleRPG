@@ -96,7 +96,7 @@ public:
 			}
 		}
 
-		for (int i = 0; i < GameObjects.size(); i++)
+		for (int i = 0; i < (int)GameObjects.size(); i++)
 		{
 			if ((*GameObjects[i]).position.x > -1 && (*GameObjects[i]).position.y > -1
 				&& (*GameObjects[i]).position.x < size.x && (*GameObjects[i]).position.y < size.y) {
@@ -127,7 +127,7 @@ public:
 	GameObject* getGameObjectByMapPosition(Vector2 pos, bool showWarning = true) {
 		GameObject* obj = new GameObject(Vector2(), ' ', "");
 
-		for(int i = 0; i < GameObjects.size(); i++)
+		for(int i = 0; i < (int)GameObjects.size(); i++)
 		{
 			if ((*GameObjects[i]).position == pos) { obj = GameObjects[i]; break; }
 		}
@@ -146,7 +146,7 @@ public:
 	GameObject* getGameObjectByTag(string tag, bool showWarning = true) {
 		GameObject* obj = new GameObject(Vector2(), ' ', "");
 
-		for (int i = 0; i < GameObjects.size(); i++)
+		for (int i = 0; i < (int)GameObjects.size(); i++)
 		{
 			if ((*GameObjects[i]).tag == tag) { obj = GameObjects[i]; break; }
 		}
@@ -164,7 +164,7 @@ public:
 	vector<GameObject*> getGameObjectsByMapPosition(Vector2 pos) {
 		vector<GameObject*> objs;
 
-		for (int i = 0; i < GameObjects.size(); i++)
+		for (int i = 0; i < (int)GameObjects.size(); i++)
 		{
 			if ((*GameObjects[i]).position == pos) objs.push_back(GameObjects[i]);
 		}
@@ -180,7 +180,7 @@ public:
 	vector<GameObject*> getGameObjectsByTag(string tag) {
 		vector<GameObject*> objs;
 
-		for (int i = 0; i < GameObjects.size(); i++)
+		for (int i = 0; i < (int)GameObjects.size(); i++)
 		{
 			if ((*GameObjects[i]).tag == tag) objs.push_back(GameObjects[i]);
 		}

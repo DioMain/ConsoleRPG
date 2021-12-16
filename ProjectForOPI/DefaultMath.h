@@ -31,7 +31,7 @@ public:
 	/// </summary>
 	/// <param name="vec">Vector2</param>
 	/// <returns>Length of vector</returns>
-	static float Length(Vector2 vec) {
+	static double Length(Vector2 vec) {
 		return sqrt(pow(vec.x, 2) + pow(vec.y, 2));
 	}
 
@@ -41,7 +41,7 @@ public:
 	/// <param name="vec0">First Vector2</param>
 	/// <param name="vec1">Second Vector2</param>
 	/// <returns>Dot of two vectors</returns>
-	static float Dot(Vector2 vec0, Vector2 vec1) {
+	static double Dot(Vector2 vec0, Vector2 vec1) {
 		return vec0.x * vec1.x + vec0.y * vec1.y;
 	}
 
@@ -51,7 +51,7 @@ public:
 	/// <param name="vec0">First Vector2</param>
 	/// <param name="vec1">Second Vector2</param>
 	/// <returns>Angle between two vectors</returns>
-	static float Angle(Vector2 vec0, Vector2 vec1) {
+	static double Angle(Vector2 vec0, Vector2 vec1) {
 		return Dot(vec0, vec1) / (Length(vec0) * Length(vec1));
 	}
 
