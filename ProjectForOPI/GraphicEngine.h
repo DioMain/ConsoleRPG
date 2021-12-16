@@ -102,7 +102,7 @@ public:
 	/// <summary>
 	/// This func drawing map from symbols on console window
 	/// </summary>
-	void draw() {
+	void Render() {
 
 		for (int y = 0; y < size.y; y++)
 		{
@@ -134,6 +134,18 @@ public:
 		}
 	}
 
+	/// <summary>
+	/// GameObject function
+	/// </summary>
+	/// <returns>Count of GameObjects in map</returns>
+	int getGameObjectsCount() {
+		return GameObjects.size();
+	}
+
+	/// <summary>
+	/// Map function
+	/// </summary>
+	/// <returns>Size of map in Vector2</returns>
 	Vector2 getSize() {
 		return size;
 	}
