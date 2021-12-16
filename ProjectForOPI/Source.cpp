@@ -12,7 +12,7 @@ GameMap MainMap(Vector2(10, 6), '.');
 int main() {
 	setlocale(LC_ALL, "ru");
 
-	int Key;
+	int Key = 0;
 
 	GameObject Player = GameObject(Vector2(5, 2), 'P', "Player");
 

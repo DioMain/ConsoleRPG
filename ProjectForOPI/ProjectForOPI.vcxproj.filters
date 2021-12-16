@@ -29,8 +29,5 @@
     <ClInclude Include="GraphicEngine.h">
       <Filter>Файлы заголовков\2Dview</Filter>
     </ClInclude>
-    <ClInclude Include="InputManager.h">
-      <Filter>Файлы заголовков\2Dview</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
