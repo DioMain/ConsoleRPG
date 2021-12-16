@@ -33,7 +33,6 @@ int main() {
 
 	GameObject Player = GameObject(Vector2(5, 2), 'P', "Player");
 	GameObject Candy(Vector2(), 'C', "Candy");
-	
 
 	for (int y = 0; y < MainMap.getSize().y; y++) // WALL GENERATE //
 	{
@@ -51,7 +50,6 @@ int main() {
 
 	MainMap.addGameObject(&Player);
 	MainMap.addGameObject(&Candy);
-
 	
 	///////////PRELOAD///////////
 
