@@ -2,6 +2,7 @@
 #include <time.h>
 #include <stdio.h>
 #include <conio.h>
+#include <windows.h>
 #include "DefaultMath.h"
 #include "GraphicEngine.h"
 
@@ -12,7 +13,7 @@ GameMap MainMap(Vector2(10, 6), '.');
 int main() {
 	setlocale(LC_ALL, "ru");
 
-	char Key;
+	int Key;
 
 	GameObject Player = GameObject(Vector2(5, 2), 'P', "Player");
 
@@ -41,16 +42,16 @@ int main() {
 
 		switch (Key)
 		{
-		case 'w':
+		case 72:
 			Player.position.y--;
 			break;
-		case 's':
+		case 80:
 			Player.position.y++;
 			break;
-		case 'd':
+		case 77:
 			Player.position.x++;
 			break;
-		case 'a':
+		case 75:
 			Player.position.x--;
 			break;
 		case '1':

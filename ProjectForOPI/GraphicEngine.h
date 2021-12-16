@@ -133,6 +133,10 @@ public:
 			cout << endl;
 		}
 	}
+
+	Vector2 getSize() {
+		return size;
+	}
 	
 	/// <summary>
 	/// GameObject search
