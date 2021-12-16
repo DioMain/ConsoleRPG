@@ -40,6 +40,11 @@ private:
 
 };
 
+// Compare two GameObjects with "==" operator
+bool operator == (GameObject left, GameObject right) {
+	return (left.position == right.position && left.Symbol == right.Symbol && left.tag == right.tag) ? true : false;
+}
+
 // This class contains information about the game map (size, array of symbols), as well as an array of GameObjects used here
 // Also functions for map manipulate
 class GameMap
@@ -84,9 +89,20 @@ public:
 	}
 
 	/// <summary>
+	/// Delete GameObject with current pointer
+	/// </summary>
+	/// <param name="gameObject">GameObject pointer</param>
+	void deleteGameObject(GameObject* gameObject) {
+		for (int i = 0; i < (int)GameObjects.size(); i++)
+		{
+			if (gameObject == GameObjects[i]) { GameObjects.erase(GameObjects.begin() + i); break; }
+		}
+	}
+
+	/// <summary>
 	/// This func drawing map from symbols on console window
 	/// </summary>
-	void draw() {
+	void Render() {
 
 		for (int y = 0; y < size.y; y++)
 		{
@@ -96,7 +112,7 @@ public:
 			}
 		}
 
-		for (int i = 0; i < GameObjects.size(); i++)
+		for (int i = 0; i < (int)GameObjects.size(); i++)
 		{
 			if ((*GameObjects[i]).position.x > -1 && (*GameObjects[i]).position.y > -1
 				&& (*GameObjects[i]).position.x < size.x && (*GameObjects[i]).position.y < size.y) {
@@ -117,6 +133,22 @@ public:
 			cout << endl;
 		}
 	}
+
+	/// <summary>
+	/// GameObject function
+	/// </summary>
+	/// <returns>Count of GameObjects in map</returns>
+	int getGameObjectsCount() {
+		return GameObjects.size();
+	}
+
+	/// <summary>
+	/// Map function
+	/// </summary>
+	/// <returns>Size of map in Vector2</returns>
+	Vector2 getSize() {
+		return size;
+	}
 	
 	/// <summary>
 	/// GameObject search
@@ -127,7 +159,7 @@ public:
 	GameObject* getGameObjectByMapPosition(Vector2 pos, bool showWarning = true) {
 		GameObject* obj = new GameObject(Vector2(), ' ', "");
 
-		for(int i = 0; i < GameObjects.size(); i++)
+		for(int i = 0; i < (int)GameObjects.size(); i++)
 		{
 			if ((*GameObjects[i]).position == pos) { obj = GameObjects[i]; break; }
 		}
@@ -146,7 +178,7 @@ public:
 	GameObject* getGameObjectByTag(string tag, bool showWarning = true) {
 		GameObject* obj = new GameObject(Vector2(), ' ', "");
 
-		for (int i = 0; i < GameObjects.size(); i++)
+		for (int i = 0; i < (int)GameObjects.size(); i++)
 		{
 			if ((*GameObjects[i]).tag == tag) { obj = GameObjects[i]; break; }
 		}
@@ -164,7 +196,7 @@ public:
 	vector<GameObject*> getGameObjectsByMapPosition(Vector2 pos) {
 		vector<GameObject*> objs;
 
-		for (int i = 0; i < GameObjects.size(); i++)
+		for (int i = 0; i < (int)GameObjects.size(); i++)
 		{
 			if ((*GameObjects[i]).position == pos) objs.push_back(GameObjects[i]);
 		}
@@ -180,7 +212,7 @@ public:
 	vector<GameObject*> getGameObjectsByTag(string tag) {
 		vector<GameObject*> objs;
 
-		for (int i = 0; i < GameObjects.size(); i++)
+		for (int i = 0; i < (int)GameObjects.size(); i++)
 		{
 			if ((*GameObjects[i]).tag == tag) objs.push_back(GameObjects[i]);
 		}
