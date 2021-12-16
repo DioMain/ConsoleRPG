@@ -24,6 +24,7 @@
   <ItemGroup>
     <ClInclude Include="DefaultMath.h" />
     <ClInclude Include="GraphicEngine.h" />
+    <ClInclude Include="InputManager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

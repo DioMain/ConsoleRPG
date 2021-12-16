@@ -2,7 +2,6 @@
 #include <time.h>
 #include <stdio.h>
 #include <conio.h>
-#include <windows.h>
 #include "DefaultMath.h"
 #include "GraphicEngine.h"
 
