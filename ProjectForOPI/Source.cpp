@@ -1,31 +1,52 @@
 #include <iostream>
 #include <time.h>
+#include <stdio.h>
+#include <conio.h>
 #include "DefaultMath.h"
 #include "GraphicEngine.h"
 
 using namespace std;
 
+GameMap MainMap(Vector2(10, 6), '.');
+
 int main() {
 	setlocale(LC_ALL, "ru");
 
-	GameMap testMap = GameMap(Vector2(10, 10), '.');
+	char Key;
 
-	GameObject obj = GameObject(Vector2(0, 0), '#', "first");
+	GameObject Player = GameObject(Vector2(5, 2), 'P', "Player");
 
-	testMap.addGameObject(&obj);
-	testMap.addGameObject(new GameObject(Vector2(1, 1), '/', "second"));
+	MainMap.addGameObject(new GameObject(Vector2(0, 5), '#', "Wall"));
+	MainMap.addGameObject(new GameObject(Vector2(1, 5), '#', "Wall"));
+	MainMap.addGameObject(new GameObject(Vector2(2, 5), '#', "Wall"));
+	MainMap.addGameObject(new GameObject(Vector2(3, 5), '#', "Wall"));
+	MainMap.addGameObject(new GameObject(Vector2(4, 5), '#', "Wall"));
+	MainMap.addGameObject(new GameObject(Vector2(5, 5), '#', "Wall"));
+	MainMap.addGameObject(new GameObject(Vector2(6, 5), '#', "Wall"));
+	MainMap.addGameObject(&Player);
 
-	testMap.draw();
+	while (true)
+	{
+		MainMap.draw();
 
-	cout << "X: " << (*testMap.getGameObjectByTag("first")).position.x << endl;
-	cout << "Y: " << (*testMap.getGameObjectByTag("first")).position.y << endl;
+		Key = _getch();
 
-	(*testMap.getGameObjectById(0)).position.y++;
-	
-	testMap.deleteGameObjectById(1);
+		switch (Key)
+		{
+		case 'w':
+			Player.position.y--;
+			break;
+		case 's':
+			Player.position.y++;
+			break;
+		case 'd':
+			Player.position.x++;
+			break;
+		case 'a':
+			Player.position.x--;
+			break;
+		}
 
-	cout << "X: " << obj.position.x << endl;
-	cout << "Y: " << obj.position.y << endl;
-
-	testMap.draw();
+		system("CLS");
+	}
 }

@@ -125,14 +125,14 @@ public:
 	/// <param name="showWarning">Show message that GameObject is not exist?</param>
 	/// <returns>GameObject pointer in current position</returns>
 	GameObject* getGameObjectByMapPosition(Vector2 pos, bool showWarning = true) {
-		GameObject* obj = new GameObject(Vector2(), ' ', "null");
+		GameObject* obj = new GameObject(Vector2(), ' ', "");
 
 		for(int i = 0; i < GameObjects.size(); i++)
 		{
 			if ((*GameObjects[i]).position == pos) { obj = GameObjects[i]; break; }
 		}
 
-		if ((*obj).tag == "null" && showWarning) cout << "GameObject no found!" << endl;
+		if ((*obj).tag == "" && showWarning) cout << "GameObject no found!" << endl;
 			
 		return obj;
 	}
@@ -144,14 +144,14 @@ public:
 	/// <param name="showWarning">Show message that GameObject is not exist?</param>
 	/// <returns>GameObject pointer with this tag</returns>
 	GameObject* getGameObjectByTag(string tag, bool showWarning = true) {
-		GameObject* obj = new GameObject(Vector2(), ' ', "null");
+		GameObject* obj = new GameObject(Vector2(), ' ', "");
 
 		for (int i = 0; i < GameObjects.size(); i++)
 		{
 			if ((*GameObjects[i]).tag == tag) { obj = GameObjects[i]; break; }
 		}
 
-		if ((*obj).tag == "null" && showWarning) cout << "GameObject no found!" << endl;
+		if ((*obj).tag == "" && showWarning) cout << "GameObject no found!" << endl;
 
 		return obj;
 	}
