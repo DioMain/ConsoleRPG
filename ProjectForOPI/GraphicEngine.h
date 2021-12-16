@@ -70,8 +70,8 @@ public:
 	/// <summary>
 	/// Add GameObject to map
 	/// </summary>
-	/// <param name="gameObject">GameObject</param>
-	void addGameObject(GameObject gameObject) {
+	/// <param name="gameObject">GameObject pointer</param>
+	void addGameObject(GameObject* gameObject) {
 		GameObjects.push_back(gameObject);
 	}
 	
@@ -98,12 +98,12 @@ public:
 
 		for (int i = 0; i < GameObjects.size(); i++)
 		{
-			if (GameObjects[i].position.x > -1 && GameObjects[i].position.y > -1
-				&& GameObjects[i].position.x < size.x && GameObjects[i].position.y < size.y) {
-				Map[GameObjects[i].position.y][GameObjects[i].position.x] = GameObjects[i].Symbol;
+			if ((*GameObjects[i]).position.x > -1 && (*GameObjects[i]).position.y > -1
+				&& (*GameObjects[i]).position.x < size.x && (*GameObjects[i]).position.y < size.y) {
+				Map[(*GameObjects[i]).position.y][(*GameObjects[i]).position.x] = (*GameObjects[i]).Symbol;
 			}
 			else {
-				cout << "GameObject[" << GameObjects[i].Symbol << ", " << GameObjects[i].tag << "] - out of map area!" << endl;
+				cout << "GameObject[" << (*GameObjects[i]).Symbol << ", " << (*GameObjects[i]).tag << "] - out of map area!" << endl;
 			}
 			
 		}
@@ -123,16 +123,16 @@ public:
 	/// </summary>
 	/// <param name="pos">position of Object (in Vector2)</param>
 	/// <param name="showWarning">Show message that GameObject is not exist?</param>
-	/// <returns>GameObject in current position</returns>
-	GameObject getGameObjectByMapPosition(Vector2 pos, bool showWarning = true) {
-		GameObject obj(Vector2(), ' ', "null");
+	/// <returns>GameObject pointer in current position</returns>
+	GameObject* getGameObjectByMapPosition(Vector2 pos, bool showWarning = true) {
+		GameObject* obj = new GameObject(Vector2(), ' ', "null");
 
 		for(int i = 0; i < GameObjects.size(); i++)
 		{
-			if (GameObjects[i].position == pos) { obj = GameObjects[i]; break; }
+			if ((*GameObjects[i]).position == pos) { obj = GameObjects[i]; break; }
 		}
 
-		if (obj.tag == "null" && showWarning) cout << "GameObject no found!" << endl;
+		if ((*obj).tag == "null" && showWarning) cout << "GameObject no found!" << endl;
 			
 		return obj;
 	}
@@ -142,16 +142,16 @@ public:
 	/// </summary>
 	/// <param name="tag">Tag of GameObjects</param>
 	/// <param name="showWarning">Show message that GameObject is not exist?</param>
-	/// <returns>GameObject with this tag</returns>
-	GameObject getGameObjectByTag(string tag, bool showWarning = true) {
-		GameObject obj(Vector2(), ' ', "null");
+	/// <returns>GameObject pointer with this tag</returns>
+	GameObject* getGameObjectByTag(string tag, bool showWarning = true) {
+		GameObject* obj = new GameObject(Vector2(), ' ', "null");
 
 		for (int i = 0; i < GameObjects.size(); i++)
 		{
-			if (GameObjects[i].tag == tag) { obj = GameObjects[i]; break; }
+			if ((*GameObjects[i]).tag == tag) { obj = GameObjects[i]; break; }
 		}
 
-		if (obj.tag == "null" && showWarning) cout << "GameObject no found!" << endl;
+		if ((*obj).tag == "null" && showWarning) cout << "GameObject no found!" << endl;
 
 		return obj;
 	}
@@ -160,13 +160,13 @@ public:
 	/// GameObjects search
 	/// </summary>
 	/// <param name="pos">Position of GameObjects (in Vector2)</param>
-	/// <returns>Dynamic array (vector) from GameObjects</returns>
-	vector<GameObject> getGameObjectsByMapPosition(Vector2 pos) {
-		vector<GameObject> objs;
+	/// <returns>Dynamic array (vector) of GameoObject pointers</returns>
+	vector<GameObject*> getGameObjectsByMapPosition(Vector2 pos) {
+		vector<GameObject*> objs;
 
 		for (int i = 0; i < GameObjects.size(); i++)
 		{
-			if (GameObjects[i].position == pos) objs.push_back(GameObjects[i]);
+			if ((*GameObjects[i]).position == pos) objs.push_back(GameObjects[i]);
 		}
 
 		return objs;
@@ -176,13 +176,13 @@ public:
 	/// GameObjects search
 	/// </summary>
 	/// <param name="tag">Tag of GameObjects</param>
-	/// <returns>Dynamic array (vector) from GameObjects</returns>
-	vector<GameObject> getGameObjectsByTag(string tag) {
-		vector<GameObject> objs;
+	/// <returns>Dynamic array (vector) of GameObject pointers</returns>
+	vector<GameObject*> getGameObjectsByTag(string tag) {
+		vector<GameObject*> objs;
 
 		for (int i = 0; i < GameObjects.size(); i++)
 		{
-			if (GameObjects[i].tag == tag) objs.push_back(GameObjects[i]);
+			if ((*GameObjects[i]).tag == tag) objs.push_back(GameObjects[i]);
 		}
 
 		return objs;
@@ -192,14 +192,14 @@ public:
 	/// GameObject search
 	/// </summary>
 	/// <param name="id">ID</param>
-	/// <returns>GameObject with this id</returns>
-	GameObject getGameObjectById(int id) {
+	/// <returns>GameObject pointer with this id</returns>
+	GameObject* getGameObjectById(int id) {
 		return GameObjects[id];
 	}
 
 private:
 
-	vector<GameObject> GameObjects; // Array of GameObjects
+	vector<GameObject*> GameObjects; // Array of GameObjects
 	vector<vector<char>> Map; // Char matrix
 	Vector2 size; // map size
 
