@@ -16,6 +16,9 @@ int main() {
 
 	GameObject Player = GameObject(Vector2(5, 2), 'P', "Player");
 
+	GameObject One = GameObject(Vector2(0, 0), 'F', "Test");
+	GameObject Two = GameObject(Vector2(9, 0), 'F', "Test");
+
 	MainMap.addGameObject(new GameObject(Vector2(0, 5), '#', "Wall"));
 	MainMap.addGameObject(new GameObject(Vector2(1, 5), '#', "Wall"));
 	MainMap.addGameObject(new GameObject(Vector2(2, 5), '#', "Wall"));
@@ -23,6 +26,11 @@ int main() {
 	MainMap.addGameObject(new GameObject(Vector2(4, 5), '#', "Wall"));
 	MainMap.addGameObject(new GameObject(Vector2(5, 5), '#', "Wall"));
 	MainMap.addGameObject(new GameObject(Vector2(6, 5), '#', "Wall"));
+	MainMap.addGameObject(new GameObject(Vector2(7, 5), '#', "Wall"));
+	MainMap.addGameObject(new GameObject(Vector2(8, 5), '#', "Wall"));
+	MainMap.addGameObject(new GameObject(Vector2(9, 5), '#', "Wall"));
+	MainMap.addGameObject(&One);
+	MainMap.addGameObject(&Two);
 	MainMap.addGameObject(&Player);
 
 	while (true)
@@ -45,8 +53,20 @@ int main() {
 		case 'a':
 			Player.position.x--;
 			break;
+		case '1':
+			MainMap.deleteGameObject(&One);
+			break;
+		case '2':
+			MainMap.deleteGameObject(&Two);
+			break;
+		case 'F':
+			vector<GameObject*> Walls = MainMap.getGameObjectsByTag("Wall");
+			for (int i = 0; i < (int)Walls.size(); i++) MainMap.deleteGameObject(Walls[i]);
+			break;
 		}
 
 		system("CLS");
 	}
+
+	return 0;
 }

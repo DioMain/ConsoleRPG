@@ -40,6 +40,11 @@ private:
 
 };
 
+// Compare two GameObjects with "==" operator
+bool operator == (GameObject left, GameObject right) {
+	return (left.position == right.position && left.Symbol == right.Symbol && left.tag == right.tag) ? true : false;
+}
+
 // This class contains information about the game map (size, array of symbols), as well as an array of GameObjects used here
 // Also functions for map manipulate
 class GameMap
@@ -81,6 +86,17 @@ public:
 	/// <param name="id">ID</param>
 	void deleteGameObjectById(int id) {
 		GameObjects.erase(GameObjects.begin() + id);
+	}
+
+	/// <summary>
+	/// Delete GameObject with current pointer
+	/// </summary>
+	/// <param name="gameObject">GameObject pointer</param>
+	void deleteGameObject(GameObject* gameObject) {
+		for (int i = 0; i < (int)GameObjects.size(); i++)
+		{
+			if (gameObject == GameObjects[i]) { GameObjects.erase(GameObjects.begin() + i); break; }
+		}
 	}
 
 	/// <summary>
