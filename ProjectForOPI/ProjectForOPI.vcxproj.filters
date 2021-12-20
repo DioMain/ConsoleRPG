@@ -16,9 +16,18 @@
     <Filter Include="Файлы заголовков\2Dview">
       <UniqueIdentifier>{457b2fa2-537f-4bfe-ad61-ac7e114f132f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Game">
+      <UniqueIdentifier>{e54977aa-a625-421a-ac29-cd247ca239bd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Vars.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -30,6 +39,15 @@
       <Filter>Файлы заголовков\2Dview</Filter>
     </ClInclude>
     <ClInclude Include="Physics.h">
+      <Filter>Файлы заголовков\2Dview</Filter>
+    </ClInclude>
+    <ClInclude Include="Maps.h">
+      <Filter>Файлы заголовков\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Events.h">
+      <Filter>Файлы заголовков\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Libs.h">
       <Filter>Файлы заголовков\2Dview</Filter>
     </ClInclude>
   </ItemGroup>
