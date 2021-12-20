@@ -1,0 +1,13 @@
+#pragma once
+#include <iostream>
+#include <stdio.h>
+#include <conio.h>
+#include <Windows.h>
+#include "DefaultMath.h"
+#include "Events.h"
+#include "GraphicEngine.h"
+#include "Maps.h"
+#include "Physics.h"
+#include "Source.cpp"
+#include "Vars.cpp"
+#include "Game.cpp"
