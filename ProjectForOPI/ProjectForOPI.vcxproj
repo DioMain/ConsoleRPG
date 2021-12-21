@@ -24,9 +24,13 @@
   <ItemGroup>
     <ClInclude Include="DefaultMath.h" />
     <ClInclude Include="Events.h" />
+    <ClInclude Include="FightSystem.h" />
+    <ClInclude Include="GameLogic.h" />
     <ClInclude Include="GraphicEngine.h" />
     <ClInclude Include="Maps.h" />
     <ClInclude Include="Physics.h" />
+    <ClInclude Include="UI.h" />
+    <ClInclude Include="Vars.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

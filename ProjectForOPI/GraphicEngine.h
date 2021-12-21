@@ -2,11 +2,19 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <thread>
+#include <windows.h>
 #include "DefaultMath.h"
 
 using namespace std;
 
 namespace CE {
+
+	enum ObjectType
+	{
+		deffault,
+		action
+	};
 
 	// This class contains information about the game object (Symbol, position and tag)
 	class GameObject
@@ -16,6 +24,7 @@ namespace CE {
 		char Symbol; // How GameObject show in the map
 		string tag; // For more justify searching in map
 		Vector2 position; // position on map in Vector2
+		ObjectType type; // type of GameObject
 
 		/// <summary>
 		/// Initialization
@@ -23,10 +32,11 @@ namespace CE {
 		/// <param name="position">position in Vector2</param>
 		/// <param name="Symbol">Object symbol</param>
 		/// <param name="tag">Tag</param>
-		GameObject(Vector2 position, char Symbol, string tag = "") {
+		GameObject(Vector2 position, char Symbol, string tag = "", ObjectType type = ObjectType::deffault) {
 			this->position = position;
 			this->Symbol = Symbol;
 			this->tag = tag;
+			this->type = type;
 		}
 
 		/// <summary>
@@ -36,6 +46,7 @@ namespace CE {
 			this->position = Vector2();
 			this->Symbol = ' ';
 			this->tag = "";
+			this->type = ObjectType(deffault);
 		}
 
 	private:
@@ -44,7 +55,7 @@ namespace CE {
 
 	// Compare two GameObjects with "==" operator
 	bool operator == (GameObject left, GameObject right) {
-		return (left.position == right.position && left.Symbol == right.Symbol && left.tag == right.tag) ? true : false;
+		return (left.position == right.position && left.Symbol == right.Symbol && left.tag == right.tag && left.type == right.type) ? true : false;
 	}
 
 	// This class contains information about the game map (size, array of symbols), as well as an array of GameObjects used here
@@ -113,6 +124,13 @@ namespace CE {
 		/// This func drawing map from symbols on console window
 		/// </summary>
 		void Render() {
+			HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+			CONSOLE_SCREEN_BUFFER_INFOEX consoleBuffer = CONSOLE_SCREEN_BUFFER_INFOEX();
+
+			GetConsoleScreenBufferInfoEx(hConsole, &consoleBuffer);
+
+			short cursorX = consoleBuffer.dwCursorPosition.X;
+			short cursorY = consoleBuffer.dwCursorPosition.Y;
 
 			for (int y = 0; y < size.y; y++)
 			{
@@ -134,13 +152,14 @@ namespace CE {
 
 			}
 
-			for (int y = 0; y < size.y; y++)
+			for (short y = cursorY; y < size.y + cursorY; y++)
 			{
-				for (int x = 0; x < size.x; x++)
+				for (short x = cursorX; x < size.x + cursorX; x++)
 				{
+					SetConsoleCursorPosition(hConsole, { x, y });
 					cout << Map[y][x];
 				}
-				cout << endl;
+				//cout << endl;
 			}
 		}
 
