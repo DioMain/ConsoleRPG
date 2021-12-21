@@ -17,12 +17,21 @@ namespace Game {
 
 		system("pause");
 	}
+	
+	void EventF() {
+		system("cls");
+
+		cout << "Let's go fight!!!" << endl;
+
+		system("pause");
+	}
 
 	void EventUnit() {
 		GameObject* object = Collision::Overlap(&MainMap, &Player);
 
 		if ((*object).type == ObjectType::action) {
 			if ((*object).tag == "test") testEvent();
+			else if ((*object).tag == "F") EventF();
 
 			MainMap.deleteGameObject(object);
 		}
