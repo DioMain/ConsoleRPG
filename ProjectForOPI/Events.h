@@ -14,6 +14,7 @@ namespace Game {
 		system("cls");
 
 		cout << "Event is work!!!" << endl;
+		cout << "AYE" << endl;
 
 		system("pause");
 	}
