@@ -63,6 +63,18 @@ namespace CE {
 			if (first.position == second.position) return true;
 			else return false;
 		}
+		
+		static GameObject* Overlap(GameMap* mapPointer, GameObject* target) {
+			GameObject* obj = new GameObject(Vector2(), ' ');
+
+			for (int i = 0; i < (*mapPointer).getGameObjectsCount(); i++)
+			{
+				if ((*target).position == (*(*mapPointer).getGameObjectById(i)).position)
+					return (*mapPointer).getGameObjectById(i);
+			}
+
+			return obj;
+		}
 
 		static bool OverlapWithTag(GameMap* mapPointer, GameObject* objectPointer, string colisionTag) {
 			vector<GameObject*> objs = (*mapPointer).getGameObjectsByTag(colisionTag);
