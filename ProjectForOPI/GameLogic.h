@@ -20,7 +20,8 @@ void PreLoad(){
 
 // Loading before map render
 void BeforeRender(){
-	std::system("CLS"); // CONSOLE CLEAR //
+	//std::system("CLS"); // CONSOLE CLEAR //
+	cout << endl << Player.position.x << "       " << endl;
 }
 
 // Loading after map render
@@ -29,21 +30,15 @@ void AfterRender() {
 
 	Key = _getch();
 
-	switch (Key) // INPUT MANAGER //
-	{
-	case 'w':
-		if (!Collision::NearDirection(&MainMap, &Player, CollisionDirection(Up), "Wall")) Player.position.y--;
-		break;
-	case 's':
-		if (!Collision::NearDirection(&MainMap, &Player, CollisionDirection(Down), "Wall")) Player.position.y++;
-		break;
-	case 'd':
-		if (!Collision::NearDirection(&MainMap, &Player, CollisionDirection(Right), "Wall")) Player.position.x++;
-		break;
-	case 'a':
-		if (!Collision::NearDirection(&MainMap, &Player, CollisionDirection(Left), "Wall")) Player.position.x--;
-		break;
-	}
+	// INPUT MANAGER //
+	if ((Key == 'w' || Key == 'W' || Key == 'ö' || Key == 'Ö') 
+		&& !Collision::NearDirection(&MainMap, &Player, CollisionDirection(Up), "Wall")) Player.position.y--;
+	else if ((Key == 's' || Key == 'S' || Key == 'û' || Key == 'Û')
+		&& !Collision::NearDirection(&MainMap, &Player, CollisionDirection(Down), "Wall")) Player.position.y++;
+	else if ((Key == 'd' || Key == 'D' || Key == 'â' || Key == 'Â')
+		&& !Collision::NearDirection(&MainMap, &Player, CollisionDirection(Right), "Wall")) Player.position.x++;
+	else if ((Key == 'a' || Key == 'A' || Key == 'ô' || Key == 'Ô')
+		&& !Collision::NearDirection(&MainMap, &Player, CollisionDirection(Left), "Wall")) Player.position.x--;
 }
 
 // Loading after end game curricular

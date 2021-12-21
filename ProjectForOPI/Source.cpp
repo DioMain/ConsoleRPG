@@ -17,6 +17,14 @@ int main() {
 
 	///////////PRELOAD///////////
 
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	CONSOLE_CURSOR_INFO cursorInfo = CONSOLE_CURSOR_INFO();
+
+	cursorInfo.bVisible = FALSE;
+	cursorInfo.dwSize = 1;
+
+	SetConsoleCursorInfo(hConsole, &cursorInfo);
+
 	setlocale(LC_ALL, "ru");
 	srand((int)time(0));
 

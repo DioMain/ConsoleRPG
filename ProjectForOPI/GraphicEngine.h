@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <thread>
+#include <windows.h>
 #include "DefaultMath.h"
 
 using namespace std;
@@ -122,6 +124,13 @@ namespace CE {
 		/// This func drawing map from symbols on console window
 		/// </summary>
 		void Render() {
+			HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+			CONSOLE_SCREEN_BUFFER_INFOEX consoleBuffer = CONSOLE_SCREEN_BUFFER_INFOEX();
+
+			GetConsoleScreenBufferInfoEx(hConsole, &consoleBuffer);
+
+			short cursorX = consoleBuffer.dwCursorPosition.X;
+			short cursorY = consoleBuffer.dwCursorPosition.Y;
 
 			for (int y = 0; y < size.y; y++)
 			{
@@ -143,13 +152,14 @@ namespace CE {
 
 			}
 
-			for (int y = 0; y < size.y; y++)
+			for (short y = cursorY; y < size.y + cursorY; y++)
 			{
-				for (int x = 0; x < size.x; x++)
+				for (short x = cursorX; x < size.x + cursorX; x++)
 				{
+					SetConsoleCursorPosition(hConsole, { x, y });
 					cout << Map[y][x];
 				}
-				cout << endl;
+				//cout << endl;
 			}
 		}
 
