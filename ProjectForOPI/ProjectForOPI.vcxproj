@@ -23,7 +23,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DefaultMath.h" />
+    <ClInclude Include="Events.h" />
     <ClInclude Include="GraphicEngine.h" />
+    <ClInclude Include="Maps.h" />
     <ClInclude Include="Physics.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

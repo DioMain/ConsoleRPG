@@ -1,20 +1,29 @@
 #include <iostream>
-#include <time.h>
-#include <stdio.h>
 #include <conio.h>
 #include "DefaultMath.h"
 #include "GraphicEngine.h"
 #include "Physics.h"
+#include "Events.h"
+#include "Maps.h"
 
 using namespace std;
+using namespace CE;
+using namespace Game;
 
-///////////ONLY GLOBAL VARIABLES///////////
+GameMap MainMap; // CURRENT LOAD MAP //
 
-GameMap MainMap(Vector2(20, 10), ' '); // CURRENT LOAD MAP //
+int Key = 0;
+int Hunger = 100;
+int Score = 0;
 
+bool CandyIsGenerate = false;
 bool IsLive = true;
+bool NewLevel = false;
 
-///////////ONLY GLOBAL VARIABLES///////////
+GameObject Player = GameObject(Vector2(5, 2), 'P', "Player");
+GameObject Candy(Vector2(), 'C', "Candy");
+
+CollisionDirection WallDir(None);
 
 int main() {
 
@@ -22,35 +31,9 @@ int main() {
 
 	setlocale(LC_ALL, "ru");
 	srand((int)time(0));
-
-	int Key = 0;
-	int Hunger = 100;
-	int Score = 0;
-
-	bool CandyIsGenerate = false;
-
-	CollisionDirection WallDir(None);
-
-	GameObject Player = GameObject(Vector2(5, 2), 'P', "Player");
-	GameObject Candy(Vector2(), 'C', "Candy");
-
-	for (int y = 0; y < MainMap.getSize().y; y++) // WALL GENERATE //
-	{
-		for (int x = 0; x < MainMap.getSize().x; x++)
-		{
-			if (y == 0 || y == MainMap.getSize().y - 1) {
-				MainMap.addGameObject(new GameObject(Vector2(x, y), '#', "Wall"));
-			}
-			else {
-				MainMap.addGameObject(new GameObject(Vector2(0, y), '#', "Wall"));
-				MainMap.addGameObject(new GameObject(Vector2(MainMap.getSize().x - 1, y), '#', "Wall"));
-			}
-		}
-	}
-
-	MainMap.addGameObject(&Player);
-	MainMap.addGameObject(&Candy);
 	
+	MainMap = StartMap(&Player, &Candy);
+
 	///////////PRELOAD///////////
 
 	while (IsLive) 
@@ -93,6 +76,11 @@ int main() {
 		if (Collision::Overlap(Player, Candy)) { // IF PLAYER PICK UP CANDY //
 			Hunger += 25;
 			CandyIsGenerate = false;
+		}
+
+		if (Hunger > 150 && !NewLevel) {
+			MainMap = Game::EndMap(&Player, &Candy);
+			NewLevel = true;
 		}
 
 		Hunger -= 3;
