@@ -15,16 +15,6 @@ using namespace CE;
 using namespace Game;
 
 // Loading before start game curricular
-//void writing() {
-//	if (FirstString)
-//	{
-//		for (int i = 0; text[i] != '\0'; i++)
-//		{
-//			cout << text[i];
-//		}
-//		cout << '\n'
-//	}
-//}
 
 void PreLoad(){
 	MainMap = Maps[0];

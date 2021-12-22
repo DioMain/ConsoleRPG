@@ -17,15 +17,12 @@ namespace Game {
 
 	vector<Enemy> Enemys = vector<Enemy>();
 
-	/*char text[256];*/
-
 	int MaxHeal = 2000;
 	int MaxArmor = 100;
 
 	int Heal = 2000;
 	int Armor = 100;
 	int Damage = 250;
-	/*int Step = 0;*/
 
 	GameObject Player(Vector2(5, 2), 'P', "Player");
 
