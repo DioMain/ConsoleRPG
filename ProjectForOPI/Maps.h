@@ -45,6 +45,7 @@ namespace Game {
 		map.addGameObject(new GameObject(Vector2(40, 5), 'C', "Cumpot", ObjectType::action));
 		map.addGameObject(new GameObject(Vector2(40, 10), '~', "Whip", ObjectType::action));
 		map.addGameObject(new GameObject(Vector2(10, 10), ':', "Train", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(13, 9), '=', "RunTracker", ObjectType::action));
 		map.addGameObject(&Player);
 
 		return map;
