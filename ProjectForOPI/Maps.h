@@ -32,6 +32,7 @@ namespace Game {
 
 		map.addGameObject(new GameObject(Vector2(22, 10), '?', "test", ObjectType::action));
 		map.addGameObject(new GameObject(Vector2(25, 15), '?', "F", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(35, 3), '*', "BALL", ObjectType::action));
 		map.addGameObject(&Player);
 
 		return map;

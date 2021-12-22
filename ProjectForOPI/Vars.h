@@ -13,4 +13,6 @@ namespace Game {
 	GameObject Player(Vector2(5, 2), 'P', "Player");
 
 	CollisionDirection WallDir(None);
+
+	int BALLS = 0;
 }

@@ -26,14 +26,26 @@ namespace Game {
 		system("pause");
 	}
 
+	void EventBALL() {
+
+
+		cout << "\nYou get dumbbells. Your damage increased by 5" << endl;
+		
+		system("pause");
+		system("cls");
+	}
+
 	void EventUnit() {
 		GameObject* object = Collision::Overlap(&MainMap, &Player);
 
 		if ((*object).type == ObjectType::action) {
+			if ((*object).tag == "BALL") EventBALL();
 			if ((*object).tag == "test") testEvent();
 			else if ((*object).tag == "F") EventF();
 
 			MainMap.deleteGameObject(object);
 		}
+
+
 	}
 }
