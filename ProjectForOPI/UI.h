@@ -5,6 +5,8 @@
 #include "GraphicEngine.h"
 #include "Physics.h"
 #include "Compontent.h"
+#include "Vars.h"
+#include "Maps.h"
 
 using namespace CE;
 using namespace std;
@@ -21,22 +23,26 @@ namespace Game {
 		{
 			system("cls");
 
+			cout << "  ####    ##     ##    ####  ######    ##  ##     ##    ######  ##      ######      ####    ##  ##  ##      ##\n"
+				<< "##    ##  ####   ##  ##      ##            ####   ##      ##    ##      ##        ##        ##  ##  ####  ####\n"
+				<< "##    ##  ## ##  ##  ##      ######    ##  ## ##  ##      ##    ##      ######    ##        ##  ##  ##  ##  ##\n"
+				<< "##    ##  ##  ## ##  ##      ##        ##  ##  ## ##      ##    ####    ##        ##  ##      ##    ##      ##\n"
+				<< "##    ##  ##   ####  ##      ##        ##  ##   ####      ##    ##  ##  ##        ##    ##    ##    ##      ##\n"
+				<< "  ####    ##     ##    ####  ######    ##  ##     ##      ##    ##  ##  ######      ####      ##    ##      ##\n\n\n\n";
+
 			switch (choise)
 			{
 			case 0:
-				cout << ">>New Game - Continue - Exit" << endl;
+				cout << ">>New Game - Continue" << endl;
 				break;
 			case 1:
-				cout << "New Game - >>Continue - Exit" << endl;
-				break;
-			case 2:
-				cout << "New Game - Continue - >>Exit" << endl;
+				cout << "New Game - >>Continue" << endl;
 				break;
 			}
 
 			key = _getch();
 
-			if ((key == 'D' || key == 'd') && choise < 2) choise++;
+			if ((key == 'D' || key == 'd') && choise < 1) choise++;
 			else if ((key == 'A' || key == 'a') && choise > 0) choise--;
 			else if (key == 13) break;
 		}
@@ -44,14 +50,14 @@ namespace Game {
 		switch (choise)
 		{
 		case 0:
-
+			Player.position = Vector2(24, 10);
+			LoadMap(&MainMap, 0);
 			break;
 		case 1:
 
 			break;
-		case 2:
-			system("exit");
-			break;
 		}
+		
+		system("cls");
 	}
 }
