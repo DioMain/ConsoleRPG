@@ -75,20 +75,84 @@ namespace Game {
 			map.addGameObject(new GameObject(Vector2(13, y), '#', "Wall", ObjectType::wall));
 		}
 
-		for (int y = 1; y < 20; y++)
+		for (int y = 1; y < 10; y++)
 		{
-			map.addGameObject(new GameObject(Vector2(16, y), '#', "Wall", ObjectType::wall));
+			map.addGameObject(new GameObject(Vector2(17, y), '#', "Wall", ObjectType::wall));
+		}
+
+		for (int y = 12; y < 30; y++)
+		{
+			map.addGameObject(new GameObject(Vector2(17, y), '#', "Wall", ObjectType::wall));
+		}
+
+		for (int x = 17; x < 30; x++)
+		{
+			map.addGameObject(new GameObject(Vector2(x, 12), '#', "Wall", ObjectType::wall));
+		}
+
+		for (int x = 33; x < 50; x++)
+		{
+			map.addGameObject(new GameObject(Vector2(x, 12), '#', "Wall", ObjectType::wall));
 		}
 
 		for (int x = 1; x < 13; x++)
 		{
 			map.addGameObject(new GameObject(Vector2(x, 17), '#', "Wall", ObjectType::wall));
 		}
+
+		for (int y = 12; y < 28 ;y++)
+		{
+			map.addGameObject(new GameObject(Vector2(13, y), '#', "Wall", ObjectType::wall));
+		}
+		for (int x = 5; x < 10; x++)
+		{
+			map.addGameObject(new GameObject(Vector2(x, 7), '#', "Wall", ObjectType::wall));
+		}
+
+		for (int y =7; y < 9; y++)
+		{
+			map.addGameObject(new GameObject(Vector2(5, y), '#', "Wall", ObjectType::wall));
+		}
+
+		for (int y = 7; y < 9; y++)
+		{
+			map.addGameObject(new GameObject(Vector2(9, y), '#', "Wall", ObjectType::wall));
+		}
+
+		for (int x = 5; x < 10; x++)
+		{
+			map.addGameObject(new GameObject(Vector2(x, 9), '#', "Wall", ObjectType::wall));
+		}
+
+		for (int x = 5; x < 10; x++)
+		{
+			map.addGameObject(new GameObject(Vector2(x, 12), '#', "Wall", ObjectType::wall));
+		}
+
+		for (int y = 12; y < 14; y++)
+		{
+			map.addGameObject(new GameObject(Vector2(5, y), '#', "Wall", ObjectType::wall));
+		}
+
+		for (int y = 12; y < 14; y++)
+		{
+			map.addGameObject(new GameObject(Vector2(9, y), '#', "Wall", ObjectType::wall));
+		}
+
+		for (int x = 5; x < 10; x++)
+		{
+			map.addGameObject(new GameObject(Vector2(x, 14), '#', "Wall", ObjectType::wall));
+		}
+		for (int x = 17; x < 45; x++)
+		{
+			map.addGameObject(new GameObject(Vector2(x, 9), '#', "Wall", ObjectType::wall));
+		}
 		//map.addGameObject(new GameObject(Vector2(5, 5), '#', "Wall", ObjectType::wall));
 
 		Player.position = Vector2(1, 1);
 
 		map.addGameObject(new GameObject(Vector2(3, 5), '?', "F", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(3, 26), '?', "None", ObjectType::action));
 		/*map.addGameObject(new GameObject(Vector2(22, 10), '?', "test", ObjectType::action));
 		map.addGameObject(new GameObject(Vector2(25, 15), '?', "F", ObjectType::action));*/
 		map.addGameObject(&Player);

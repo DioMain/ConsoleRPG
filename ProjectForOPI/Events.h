@@ -35,7 +35,14 @@ namespace Game {
 	void EventM() {
 		system("cls");
 	}
+	void EventTroll() {
+		system("cls");
 
+		cout << "Nothing"<< endl;
+
+		system("pause");
+		system("cls");
+	}
 	void EventUnit() {
 		GameObject* object = Collision::Overlap(&MainMap, &Player);
 
@@ -43,6 +50,7 @@ namespace Game {
 			if ((*object).tag == "test") testEvent();
 			else if ((*object).tag == "F") EventF();
 			else if ((*object).tag == "nextlocate") EventM();
+			else if ((*object).tag == "None") EventTroll();
 
 			MainMap.deleteGameObject(object);
 		}
