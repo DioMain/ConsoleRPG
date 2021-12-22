@@ -9,6 +9,7 @@
 #include "Maps.h"
 #include "FightSystem.h"
 #include "Compontent.h"
+#include "UI.h"
 
 using namespace std;
 using namespace CE;
@@ -16,7 +17,7 @@ using namespace Game;
 
 // Loading before start game curricular
 void PreLoad(){
-	MainMap = Maps[0];
+	MainMenu();
 }
 
 // Loading before map render

@@ -49,4 +49,9 @@ namespace Game {
 	void MapsInisialize() {
 		Maps.push_back(DevMap());
 	}
+
+	void LoadMap(GameMap* mainMap, int mapId) {
+		(*mainMap) = Maps[MapId];
+		MapId = mapId;
+	}
 }

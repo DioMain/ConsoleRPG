@@ -29,7 +29,7 @@ int main() { // ONCE IN THE GYM //
 	setlocale(LC_ALL, "ru");
 	srand((int)time(0));
 	
-	crips();
+	EnemysUnit();
 
 	MapsInisialize();
 
