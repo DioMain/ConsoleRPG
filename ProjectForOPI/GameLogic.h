@@ -8,6 +8,7 @@
 #include "Events.h"
 #include "Maps.h"
 #include "FightSystem.h"
+#include "Compontent.h"
 
 using namespace std;
 using namespace CE;

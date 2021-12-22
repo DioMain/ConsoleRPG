@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include "GraphicEngine.h"
+#include "Compontent.h"
 
 using namespace std;
 

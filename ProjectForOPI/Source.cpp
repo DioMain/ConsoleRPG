@@ -8,12 +8,13 @@
 #include "FightSystem.h"
 #include "Vars.h"
 #include "GameLogic.h"
+#include "Compontent.h"
 
 using namespace std;
 using namespace CE;
 using namespace Game;
 
-int main() {
+int main() { // ONCE IN THE GYM //
 
 	///////////PRELOAD///////////
 

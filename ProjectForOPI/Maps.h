@@ -5,6 +5,7 @@
 #include "GraphicEngine.h"
 #include "Physics.h"
 #include "Vars.h"
+#include "Compontent.h"
 
 using namespace CE;
 using namespace std;

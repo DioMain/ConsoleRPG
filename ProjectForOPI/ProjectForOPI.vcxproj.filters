@@ -53,7 +53,7 @@
     <ClInclude Include="GameLogic.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy.h">
+    <ClInclude Include="Compontent.h">
       <Filter>Файлы заголовков\ConsoleEngine</Filter>
     </ClInclude>
   </ItemGroup>

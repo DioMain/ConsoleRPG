@@ -6,7 +6,7 @@
 #include "DefaultMath.h"
 #include "Physics.h"
 #include "GraphicEngine.h"
-
+#include "Compontent.h"
 
 
 using namespace CE;

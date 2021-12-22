@@ -5,58 +5,13 @@
 #include <thread>
 #include <windows.h>
 #include "DefaultMath.h"
+#include "Compontent.h"
 
 using namespace std;
 
 namespace CE {
 
-	enum ObjectType
-	{
-		deffault,
-		action
-	};
-
-	// This class contains information about the game object (Symbol, position and tag)
-	class GameObject
-	{
-	public:
-
-		char Symbol; // How GameObject show in the map
-		string tag; // For more justify searching in map
-		Vector2 position; // position on map in Vector2
-		ObjectType type; // type of GameObject
-
-		/// <summary>
-		/// Initialization
-		/// </summary>
-		/// <param name="position">position in Vector2</param>
-		/// <param name="Symbol">Object symbol</param>
-		/// <param name="tag">Tag</param>
-		GameObject(Vector2 position, char Symbol, string tag = "", ObjectType type = ObjectType::deffault) {
-			this->position = position;
-			this->Symbol = Symbol;
-			this->tag = tag;
-			this->type = type;
-		}
-
-		/// <summary>
-		/// Initialization
-		/// </summary>
-		GameObject() {
-			this->position = Vector2();
-			this->Symbol = ' ';
-			this->tag = "";
-			this->type = ObjectType(deffault);
-		}
-
-	private:
-
-	};
-
-	// Compare two GameObjects with "==" operator
-	bool operator == (GameObject left, GameObject right) {
-		return (left.position == right.position && left.Symbol == right.Symbol && left.tag == right.tag && left.type == right.type) ? true : false;
-	}
+	
 
 	// This class contains information about the game map (size, array of symbols), as well as an array of GameObjects used here
 	// Also functions for map manipulate
