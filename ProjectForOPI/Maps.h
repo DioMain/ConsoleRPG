@@ -37,11 +37,10 @@ namespace Game {
 
 		map.addGameObject(new GameObject(Vector2(5, 5), '#', "Wall", ObjectType::wall));
 
-		Player.position = Vector2(24, 10);
-
-		map.addGameObject(new GameObject(Vector2(22, 10), '?', "test", ObjectType::action));
-		map.addGameObject(new GameObject(Vector2(25, 15), '?', "F", ObjectType::action));
-		map.addGameObject(new GameObject(Vector2(40, 15), '�', "nextlocate", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(22, 10), 'A', "Costumes", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(25, 15), 'B', "Whip", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(40, 15), 'C', "Train", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(35, 10), 'T', "ToMyMap", ObjectType::action));
 		map.addGameObject(&Player);
 
 		return map;
@@ -106,7 +105,7 @@ namespace Game {
 	}
 
 	void LoadMap(GameMap* mainMap, int mapId) {
-		(*mainMap) = Maps[MapId];
+		(*mainMap) = Maps[mapId];
 		MapId = mapId;
 	}
 }
