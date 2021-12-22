@@ -21,11 +21,11 @@ namespace Game {
 	vector<Enemy> Enemys = vector<Enemy>();
 
 	int MaxHeal = 2000;
-	int MaxArmor = 100;
+	int MaxStamina = 20;
 
-	int Heal = 2000;
-	int Armor = 100;
-	int Damage = 250;
+	int Heal = 1000;
+	int Armor = 20;
+	int Damage = 50;
 
 	GameObject Player(Vector2(5, 2), 'P', "Player");
 

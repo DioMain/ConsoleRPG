@@ -31,7 +31,6 @@ void AfterRender() {
 	int Key = 0;
 
 	Heal = (Heal > MaxHeal) ? MaxHeal : Heal;
-	Armor = MaxArmor;
 
 	IsLive = (Heal <= 0) ? false : true;
 
