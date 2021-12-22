@@ -86,8 +86,9 @@ namespace Game {
 
 		Player.position = Vector2(1, 1);
 
-		Save();
 		LoadMap(&MainMap, 1);
+
+		Save();
 	}
 
 	void EventTroll() {

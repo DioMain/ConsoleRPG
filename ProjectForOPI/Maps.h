@@ -141,8 +141,6 @@ namespace Game {
 			map.addGameObject(new GameObject(Vector2(x, 9), '#', "Wall", ObjectType::wall));
 		}
 
-		Player.position = Vector2(1, 1);
-
 		map.addGameObject(new GameObject(Vector2(10, 4), '*', "Dumbbell", ObjectType::action));
 		map.addGameObject(new GameObject(Vector2(35, 22), 'B', "Costumes", ObjectType::action));
 		map.addGameObject(new GameObject(Vector2(40, 5), 'C', "Cumpot", ObjectType::action));
