@@ -9,14 +9,16 @@
 #include "Maps.h"
 #include "FightSystem.h"
 #include "Compontent.h"
+#include "UI.h"
 
 using namespace std;
 using namespace CE;
 using namespace Game;
 
 // Loading before start game curricular
+
 void PreLoad(){
-	MainMap = Maps[0];
+	MainMenu();
 }
 
 // Loading before map render
@@ -28,10 +30,16 @@ void BeforeRender(){
 void AfterRender() {
 	int Key = 0;
 
+	Heal = (Heal > MaxHeal) ? MaxHeal : Heal;
+	Armor = MaxArmor;
+
+	cout << "\nHEAL: " << Heal << '\t' << "ARMOR: " << Armor;
+
 	Key = _getch();
 
 	// INPUT MANAGER //
-	if ((Key == 'w' || Key == 'W' || Key == 'ö' || Key == 'Ö') 
+
+	if ((Key == 'w' || Key == 'W' || Key == 'ö' || Key == 'Ö')
 		&& !Collision::NearDirectionWithWall(&MainMap, &Player, CollisionDirection(Up))) Player.position.y--;
 	else if ((Key == 's' || Key == 'S' || Key == 'û' || Key == 'Û')
 		&& !Collision::NearDirectionWithWall(&MainMap, &Player, CollisionDirection(Down))) Player.position.y++;
@@ -40,9 +48,8 @@ void AfterRender() {
 	else if ((Key == 'a' || Key == 'A' || Key == 'ô' || Key == 'Ô')
 		&& !Collision::NearDirectionWithWall(&MainMap, &Player, CollisionDirection(Left))) Player.position.x--;
 
-	Heal = (Heal > MaxHeal) ? MaxHeal : Heal;
-	Armor = MaxArmor;
 }
+
 
 // Loading after end game curricular
 void PastLoad() {

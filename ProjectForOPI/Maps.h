@@ -41,7 +41,7 @@ namespace Game {
 
 		map.addGameObject(new GameObject(Vector2(22, 10), '?', "test", ObjectType::action));
 		map.addGameObject(new GameObject(Vector2(25, 15), '?', "F", ObjectType::action));
-		map.addGameObject(new GameObject(Vector2(40, 15), '¹', "nextlocate", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(40, 15), 'ï¿½', "nextlocate", ObjectType::action));
 		map.addGameObject(&Player);
 
 		return map;
@@ -89,8 +89,12 @@ namespace Game {
 		Player.position = Vector2(1, 1);
 
 		map.addGameObject(new GameObject(Vector2(3, 5), '?', "F", ObjectType::action));
-		/*map.addGameObject(new GameObject(Vector2(22, 10), '?', "test", ObjectType::action));
-		map.addGameObject(new GameObject(Vector2(25, 15), '?', "F", ObjectType::action));*/
+		map.addGameObject(new GameObject(Vector2(10, 3), '*', "Dumbbell", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(35, 5), 'B', "Costumes", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(40, 5), 'C', "Cumpot", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(40, 10), '~', "Whip", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(10, 10), ':', "Train", ObjectType::action));
+
 		map.addGameObject(&Player);
 
 		return map;
@@ -98,7 +102,11 @@ namespace Game {
 
 	void MapsInisialize() {
 		Maps.push_back(DevMap());
-
 		Maps.push_back(Mymap());
+	}
+
+	void LoadMap(GameMap* mainMap, int mapId) {
+		(*mainMap) = Maps[MapId];
+		MapId = mapId;
 	}
 }
