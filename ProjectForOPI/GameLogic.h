@@ -10,6 +10,7 @@
 #include "FightSystem.h"
 #include "Compontent.h"
 #include "UI.h"
+#include "SaveLoad.h"
 
 using namespace std;
 using namespace CE;
@@ -31,7 +32,6 @@ void AfterRender() {
 	int Key = 0;
 
 	Heal = (Heal > MaxHeal) ? MaxHeal : Heal;
-	Armor = MaxArmor;
 
 	IsLive = (Heal <= 0) ? false : true;
 
@@ -49,7 +49,6 @@ void AfterRender() {
 		&& !Collision::NearDirectionWithWall(&MainMap, &Player, CollisionDirection(Right))) Player.position.x++;
 	else if ((Key == 'a' || Key == 'A')
 		&& !Collision::NearDirectionWithWall(&MainMap, &Player, CollisionDirection(Left))) Player.position.x--;
-
 }
 
 

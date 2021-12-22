@@ -28,6 +28,7 @@
     <ClInclude Include="FightSystem.h" />
     <ClInclude Include="GameLogic.h" />
     <ClInclude Include="GraphicEngine.h" />
+    <ClInclude Include="SaveLoad.h" />
     <ClInclude Include="Maps.h" />
     <ClInclude Include="Physics.h" />
     <ClInclude Include="UI.h" />
