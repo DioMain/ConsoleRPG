@@ -40,8 +40,11 @@ namespace Game {
 		Player.position = Vector2(24, 10);
 
 		map.addGameObject(new GameObject(Vector2(22, 10), '?', "test", ObjectType::action));
-		map.addGameObject(new GameObject(Vector2(25, 15), '?', "F", ObjectType::action));
-		map.addGameObject(new GameObject(Vector2(35, 3), '*', "BALL", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(10, 3), '*', "Dumbbell", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(35, 5), 'B', "Costumes", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(40, 5), 'C', "Cumpot", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(40, 10), '~', "Whip", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(20, 20), ':', "Trainer", ObjectType::action));
 		map.addGameObject(&Player);
 
 		return map;

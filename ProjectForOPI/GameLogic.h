@@ -15,6 +15,17 @@ using namespace CE;
 using namespace Game;
 
 // Loading before start game curricular
+//void writing() {
+//	if (FirstString)
+//	{
+//		for (int i = 0; text[i] != '\0'; i++)
+//		{
+//			cout << text[i];
+//		}
+//		cout << '\n'
+//	}
+//}
+
 void PreLoad(){
 	MainMap = Maps[0];
 }
@@ -28,10 +39,16 @@ void BeforeRender(){
 void AfterRender() {
 	int Key = 0;
 
+	Heal = (Heal > MaxHeal) ? MaxHeal : Heal;
+	Armor = MaxArmor;
+
+	cout << "\nHEAL: " << Heal << '\t' << "ARMOR: " << Armor;
+
 	Key = _getch();
 
 	// INPUT MANAGER //
-	if ((Key == 'w' || Key == 'W' || Key == 'ö' || Key == 'Ö') 
+
+	if ((Key == 'w' || Key == 'W' || Key == 'ö' || Key == 'Ö')
 		&& !Collision::NearDirectionWithWall(&MainMap, &Player, CollisionDirection(Up))) Player.position.y--;
 	else if ((Key == 's' || Key == 'S' || Key == 'û' || Key == 'Û')
 		&& !Collision::NearDirectionWithWall(&MainMap, &Player, CollisionDirection(Down))) Player.position.y++;
@@ -40,9 +57,8 @@ void AfterRender() {
 	else if ((Key == 'a' || Key == 'A' || Key == 'ô' || Key == 'Ô')
 		&& !Collision::NearDirectionWithWall(&MainMap, &Player, CollisionDirection(Left))) Player.position.x--;
 
-	Heal = (Heal > MaxHeal) ? MaxHeal : Heal;
-	Armor = MaxArmor;
 }
+
 
 // Loading after end game curricular
 void PastLoad() {
