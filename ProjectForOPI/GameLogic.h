@@ -32,13 +32,13 @@ void AfterRender() {
 
 	// INPUT MANAGER //
 	if ((Key == 'w' || Key == 'W' || Key == 'ö' || Key == 'Ö') 
-		&& !Collision::NearDirection(&MainMap, &Player, CollisionDirection(Up), "Wall")) Player.position.y--;
+		&& !Collision::NearDirectionWithWall(&MainMap, &Player, CollisionDirection(Up))) Player.position.y--;
 	else if ((Key == 's' || Key == 'S' || Key == 'û' || Key == 'Û')
-		&& !Collision::NearDirection(&MainMap, &Player, CollisionDirection(Down), "Wall")) Player.position.y++;
+		&& !Collision::NearDirectionWithWall(&MainMap, &Player, CollisionDirection(Down))) Player.position.y++;
 	else if ((Key == 'd' || Key == 'D' || Key == 'â' || Key == 'Â')
-		&& !Collision::NearDirection(&MainMap, &Player, CollisionDirection(Right), "Wall")) Player.position.x++;
+		&& !Collision::NearDirectionWithWall(&MainMap, &Player, CollisionDirection(Right))) Player.position.x++;
 	else if ((Key == 'a' || Key == 'A' || Key == 'ô' || Key == 'Ô')
-		&& !Collision::NearDirection(&MainMap, &Player, CollisionDirection(Left), "Wall")) Player.position.x--;
+		&& !Collision::NearDirectionWithWall(&MainMap, &Player, CollisionDirection(Left))) Player.position.x--;
 
 	Heal = (Heal > MaxHeal) ? MaxHeal : Heal;
 	Armor = MaxArmor;

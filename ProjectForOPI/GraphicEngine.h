@@ -205,6 +205,22 @@ namespace CE {
 		}
 
 		/// <summary>
+		/// GameObjects search
+		/// </summary>
+		/// <param name="ObjectType">Type of GameObjects</param>
+		/// <returns>Dynamic array (vector) of GameObject pointers</returns>
+		vector<GameObject*> getGameObjectsByType(ObjectType type) {
+			vector<GameObject*> objs;
+
+			for (int i = 0; i < (int)GameObjects.size(); i++)
+			{
+				if ((*GameObjects[i]).type == type) objs.push_back(GameObjects[i]);
+			}
+
+			return objs;
+		}
+
+		/// <summary>
 		/// GameObject search
 		/// </summary>
 		/// <param name="id">ID</param>

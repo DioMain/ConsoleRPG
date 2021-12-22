@@ -60,6 +60,17 @@ namespace CE {
 			return false;
 		}
 
+		static bool NearDirectionWithWall(GameMap* mapPointer, GameObject* objectPointer, CollisionDirection direction) {
+			vector<GameObject*> objs = (*mapPointer).getGameObjectsByType(ObjectType::wall);
+
+			for (int i = 0; i < (int)objs.size(); i++)
+			{
+				if (GetColision(*objectPointer, *objs[i]) == direction) return true;
+			}
+
+			return false;
+		}
+
 		static bool Overlap(GameObject first, GameObject second) {
 			if (first.position == second.position) return true;
 			else return false;

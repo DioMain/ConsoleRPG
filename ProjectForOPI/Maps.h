@@ -29,6 +29,12 @@ namespace Game {
 			}
 		}
 
+		// It is wall generate inside map (horizontal line)
+		/*for (int x = 7; x < 13; x++) 
+		{
+			map.addGameObject(new GameObject(Vector2(x, 3), '#', "Wall", ObjectType::wall));
+		}*/
+
 		map.addGameObject(new GameObject(Vector2(5, 5), '#', "Wall", ObjectType::wall));
 
 		Player.position = Vector2(24, 10);
