@@ -8,6 +8,7 @@
 #include "Compontent.h"
 #include "GameLogic.h"
 #include "Maps.h"
+#include "SaveLoad.h"
 
 using namespace CE;
 using namespace std;
@@ -85,6 +86,7 @@ namespace Game {
 
 		Player.position = Vector2(1, 1);
 
+		Save();
 		LoadMap(&MainMap, 1);
 	}
 
