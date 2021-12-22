@@ -9,6 +9,7 @@
 #include "Vars.h"
 #include "GameLogic.h"
 #include "Compontent.h"
+#include "UI.h"
 
 using namespace std;
 using namespace CE;
@@ -36,7 +37,7 @@ int main() { // ONCE IN THE GYM //
 
 	///////////PRELOAD///////////
 
-	while (true) 
+	while (IsLive) 
 	{
 		///////////BEFORE RENDER///////////
 

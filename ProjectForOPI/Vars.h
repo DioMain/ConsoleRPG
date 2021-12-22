@@ -16,6 +16,8 @@ namespace Game {
 	vector<GameMap> Maps = vector<GameMap>();
 	int MapId = 0;
 
+	bool IsLive = true;
+
 	vector<Enemy> Enemys = vector<Enemy>();
 
 	int MaxHeal = 2000;
