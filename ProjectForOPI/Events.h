@@ -3,6 +3,7 @@
 #include "DefaultMath.h"
 #include "GraphicEngine.h"
 #include "Physics.h"
+#include "FightSystem.h"
 #include "Vars.h"
 
 using namespace CE;
@@ -21,7 +22,8 @@ namespace Game {
 	void EventF() {
 		system("cls");
 
-		cout << "Let's go fight!!!" << endl;
+		//cout << Enemys[0].name << endl << Enemys[0].health << endl << Enemys[0].armor << endl << Enemys[0].attack << endl 
+		//	<< Enemys[0].discription << endl;
 
 		system("pause");
 	}

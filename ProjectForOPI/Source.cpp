@@ -27,6 +27,8 @@ int main() {
 
 	setlocale(LC_ALL, "ru");
 	srand((int)time(0));
+	
+	crips();
 
 	MapsInisialize();
 
