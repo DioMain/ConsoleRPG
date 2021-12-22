@@ -24,7 +24,7 @@ namespace Game {
 		system("cls");
 	}
 
-	void Event—ostume() {
+	void Event√ëostume() {
 
 		system("cls");
 
@@ -80,13 +80,20 @@ namespace Game {
 		system("cls");
 	}
 
+	void EventM() {
+		system("cls");
+	}
+
 	void EventUnit() {
 		GameObject* object = Collision::Overlap(&MainMap, &Player);
 
 		if ((*object).type == ObjectType::action) {
 			if ((*object).tag == "Dumbbell") EventDumbbell();
 			if ((*object).tag == "Cumpot") EventCumpot();
-			if ((*object).tag == "Costumes") Event—ostume();
+			if ((*object).tag == "Costumes") Event√ëostume();
+			if ((*object).tag == "test") testEvent();
+			if ((*object).tag == "F") EventF();
+			if ((*object).tag == "nextlocate") EventM();
 			if ((*object).tag == "Whip") EventWhip();
 			if ((*object).tag == "Train") EventTrain();
 
