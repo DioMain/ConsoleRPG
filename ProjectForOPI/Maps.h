@@ -33,6 +33,7 @@ namespace Game {
 		map.addGameObject(new GameObject(Vector2(25, 15), 'B', "Whip", ObjectType::action));
 		map.addGameObject(new GameObject(Vector2(40, 15), 'C', "Train", ObjectType::action));
 		map.addGameObject(new GameObject(Vector2(35, 10), 'T', "ToMyMap", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(30, 10), 'F', "TestB", ObjectType::action));
 		map.addGameObject(&Player);
 
 		return map;
@@ -134,6 +135,7 @@ namespace Game {
 		{
 			map.addGameObject(new GameObject(Vector2(x, 14), '#', "Wall", ObjectType::wall));
 		}
+
 		for (int x = 17; x < 45; x++)
 		{
 			map.addGameObject(new GameObject(Vector2(x, 9), '#', "Wall", ObjectType::wall));
