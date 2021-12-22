@@ -32,12 +32,17 @@ namespace Game {
 		system("cls");
 	}
 
+	void EventM() {
+		system("cls");
+	}
+
 	void EventUnit() {
 		GameObject* object = Collision::Overlap(&MainMap, &Player);
 
 		if ((*object).type == ObjectType::action) {
 			if ((*object).tag == "test") testEvent();
 			else if ((*object).tag == "F") EventF();
+			else if ((*object).tag == "nextlocate") EventM();
 
 			MainMap.deleteGameObject(object);
 		}
