@@ -3,7 +3,9 @@
 #include "DefaultMath.h"
 #include "GraphicEngine.h"
 #include "Physics.h"
+#include "FightSystem.h"
 #include "Vars.h"
+#include "Compontent.h"
 
 using namespace CE;
 using namespace std;
@@ -15,15 +17,19 @@ namespace Game {
 
 		cout << "Event is work!!!" << endl;
 
+		
 		system("pause");
+		system("cls");
 	}
 	
 	void EventF() {
 		system("cls");
 
-		cout << "Let's go fight!!!" << endl;
+		cout << Enemys[1].name << endl << Enemys[1].health << endl << Enemys[1].armor << endl << Enemys[1].attack << endl 
+			<< Enemys[1].discription << endl;
 
 		system("pause");
+		system("cls");
 	}
 
 	void EventUnit() {
