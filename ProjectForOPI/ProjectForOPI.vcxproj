@@ -23,6 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DefaultMath.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Events.h" />
     <ClInclude Include="FightSystem.h" />
     <ClInclude Include="GameLogic.h" />

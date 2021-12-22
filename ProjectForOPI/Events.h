@@ -22,8 +22,8 @@ namespace Game {
 	void EventF() {
 		system("cls");
 
-		//cout << Enemys[0].name << endl << Enemys[0].health << endl << Enemys[0].armor << endl << Enemys[0].attack << endl 
-		//	<< Enemys[0].discription << endl;
+		cout << Enemys[0].name << endl << Enemys[0].health << endl << Enemys[0].armor << endl << Enemys[0].attack << endl 
+			<< Enemys[0].discription << endl;
 
 		system("pause");
 	}
