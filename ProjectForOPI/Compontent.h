@@ -40,6 +40,7 @@ namespace CE {
 	enum ObjectType
 	{
 		deffault,
+		wall,
 		action
 	};
 

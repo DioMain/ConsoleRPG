@@ -21,8 +21,7 @@ void PreLoad(){
 
 // Loading before map render
 void BeforeRender(){
-	//std::system("CLS"); // CONSOLE CLEAR //
-	cout << endl << Player.position.x << "       " << endl;
+	
 }
 
 // Loading after map render
@@ -40,6 +39,9 @@ void AfterRender() {
 		&& !Collision::NearDirection(&MainMap, &Player, CollisionDirection(Right), "Wall")) Player.position.x++;
 	else if ((Key == 'a' || Key == 'A' || Key == 'ô' || Key == 'Ô')
 		&& !Collision::NearDirection(&MainMap, &Player, CollisionDirection(Left), "Wall")) Player.position.x--;
+
+	Heal = (Heal > MaxHeal) ? MaxHeal : Heal;
+	Armor = MaxArmor;
 }
 
 // Loading after end game curricular

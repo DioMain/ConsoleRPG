@@ -20,14 +20,16 @@ namespace Game {
 			for (int x = 0; x < map.getSize().x; x++)
 			{
 				if (y == 0 || y == map.getSize().y - 1) {
-					map.addGameObject(new GameObject(Vector2(x, y), '#', "Wall"));
+					map.addGameObject(new GameObject(Vector2(x, y), '#', "Wall", ObjectType::wall));
 				}
 				else {
-					map.addGameObject(new GameObject(Vector2(0, y), '#', "Wall"));
-					map.addGameObject(new GameObject(Vector2(map.getSize().x - 1, y), '#', "Wall"));
+					map.addGameObject(new GameObject(Vector2(0, y), '#', "Wall", ObjectType::wall));
+					map.addGameObject(new GameObject(Vector2(map.getSize().x - 1, y), '#', "Wall", ObjectType::wall));
 				}
 			}
 		}
+
+		map.addGameObject(new GameObject(Vector2(5, 5), '#', "Wall", ObjectType::wall));
 
 		Player.position = Vector2(24, 10);
 
