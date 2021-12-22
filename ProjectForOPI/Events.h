@@ -12,16 +12,6 @@ using namespace CE;
 using namespace std;
 
 namespace Game {
-	
-	void testEvent() {
-		system("cls");
-
-		cout << "Event is work!!!" << endl;
-
-		
-		system("pause");
-		system("cls");
-	}
 
 	void EventDumbbell() {
 
@@ -97,13 +87,10 @@ namespace Game {
 			if ((*object).tag == "Dumbbell") EventDumbbell();
 			if ((*object).tag == "Cumpot") EventCumpot();
 			if ((*object).tag == "Costumes") EventÑostume();
-			if ((*object).tag == "test") testEvent();
 			if ((*object).tag == "Whip") EventWhip();
 			if ((*object).tag == "Train") EventTrain();
 
 			MainMap.deleteGameObject(object);
 		}
-
-
 	}
 }
