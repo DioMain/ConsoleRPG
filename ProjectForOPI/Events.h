@@ -86,6 +86,7 @@ namespace Game {
 
 		LoadMap(&MainMap, 1);
 	}
+
 	void EventTroll() {
 		system("cls");
 

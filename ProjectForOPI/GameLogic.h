@@ -33,6 +33,8 @@ void AfterRender() {
 	Heal = (Heal > MaxHeal) ? MaxHeal : Heal;
 	Armor = MaxArmor;
 
+	IsLive = (Heal <= 0) ? false : true;
+
 	cout << "\nHEAL: " << Heal << '\t' << "ARMOR: " << Armor;
 
 	Key = _getch();

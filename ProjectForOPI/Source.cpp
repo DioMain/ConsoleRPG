@@ -37,7 +37,7 @@ int main() { // ONCE IN THE GYM //
 
 	///////////PRELOAD///////////
 
-	while (true) 
+	while (IsLive) 
 	{
 		///////////BEFORE RENDER///////////
 
