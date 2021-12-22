@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include "GraphicEngine.h"
+#include "Compontent.h"
 
 using namespace std;
 
@@ -50,6 +51,17 @@ namespace CE {
 
 		static bool NearDirection(GameMap* mapPointer, GameObject* objectPointer, CollisionDirection direction, string colisionTag) {
 			vector<GameObject*> objs = (*mapPointer).getGameObjectsByTag(colisionTag);
+
+			for (int i = 0; i < (int)objs.size(); i++)
+			{
+				if (GetColision(*objectPointer, *objs[i]) == direction) return true;
+			}
+
+			return false;
+		}
+
+		static bool NearDirectionWithWall(GameMap* mapPointer, GameObject* objectPointer, CollisionDirection direction) {
+			vector<GameObject*> objs = (*mapPointer).getGameObjectsByType(ObjectType::wall);
 
 			for (int i = 0; i < (int)objs.size(); i++)
 			{

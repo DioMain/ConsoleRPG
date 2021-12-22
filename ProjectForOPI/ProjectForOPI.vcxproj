@@ -22,6 +22,7 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Compontent.h" />
     <ClInclude Include="DefaultMath.h" />
     <ClInclude Include="Events.h" />
     <ClInclude Include="FightSystem.h" />
