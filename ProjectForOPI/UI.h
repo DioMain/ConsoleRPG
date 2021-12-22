@@ -7,6 +7,7 @@
 #include "Compontent.h"
 #include "Vars.h"
 #include "Maps.h"
+#include "SaveLoad.h"
 
 using namespace CE;
 using namespace std;
@@ -54,7 +55,7 @@ namespace Game {
 			LoadMap(&MainMap, 0);
 			break;
 		case 1:
-
+			Load();
 			break;
 		}
 		

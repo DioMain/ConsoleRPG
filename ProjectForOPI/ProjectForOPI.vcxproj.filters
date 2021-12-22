@@ -56,5 +56,8 @@
     <ClInclude Include="Compontent.h">
       <Filter>Файлы заголовков\ConsoleEngine</Filter>
     </ClInclude>
+    <ClInclude Include="SaveLoad.h">
+      <Filter>Файлы заголовков\ConsoleEngine</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
