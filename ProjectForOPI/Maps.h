@@ -47,7 +47,7 @@ namespace Game {
 	}
 
 	GameMap Mymap() {
-		GameMap map(Vector2(50, 30), ' ');
+		GameMap map(Vector2(50, 25), ' ');
 
 		for (int y = 0; y < map.getSize().y; y++) // WALL GENERATE //
 		{
@@ -79,7 +79,7 @@ namespace Game {
 			map.addGameObject(new GameObject(Vector2(17, y), '#', "Wall", ObjectType::wall));
 		}
 
-		for (int y = 12; y < 30; y++)
+		for (int y = 12; y < 25; y++)
 		{
 			map.addGameObject(new GameObject(Vector2(17, y), '#', "Wall", ObjectType::wall));
 		}
@@ -99,7 +99,7 @@ namespace Game {
 			map.addGameObject(new GameObject(Vector2(x, 17), '#', "Wall", ObjectType::wall));
 		}
 
-		for (int y = 12; y < 28 ;y++)
+		for (int y = 12; y < 23 ;y++)
 		{
 			map.addGameObject(new GameObject(Vector2(13, y), '#', "Wall", ObjectType::wall));
 		}
@@ -151,13 +151,13 @@ namespace Game {
 		Player.position = Vector2(1, 1);
 
 		map.addGameObject(new GameObject(Vector2(3, 5), '?', "F", ObjectType::action));
-		map.addGameObject(new GameObject(Vector2(10, 3), '*', "Dumbbell", ObjectType::action));
-		map.addGameObject(new GameObject(Vector2(35, 5), 'B', "Costumes", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(10, 4), '*', "Dumbbell", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(35, 22), 'B', "Costumes", ObjectType::action));
 		map.addGameObject(new GameObject(Vector2(40, 5), 'C', "Cumpot", ObjectType::action));
 		map.addGameObject(new GameObject(Vector2(40, 10), '~', "Whip", ObjectType::action));
 		map.addGameObject(new GameObject(Vector2(10, 10), ':', "Train", ObjectType::action));
 
-		map.addGameObject(new GameObject(Vector2(3, 26), '?', "None", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(3, 20), '?', "None", ObjectType::action));
 		/*map.addGameObject(new GameObject(Vector2(22, 10), '?', "test", ObjectType::action));
 		map.addGameObject(new GameObject(Vector2(25, 15), '?', "F", ObjectType::action));*/
 		map.addGameObject(&Player);

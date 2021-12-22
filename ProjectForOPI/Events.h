@@ -94,6 +94,7 @@ namespace Game {
 		system("pause");
 		system("cls");
 	}
+
 	void EventUnit() {
 		GameObject* object = Collision::Overlap(&MainMap, &Player);
 
@@ -104,6 +105,7 @@ namespace Game {
 			if ((*object).tag == "Whip") EventWhip();
 			if ((*object).tag == "Train") EventTrain();
 			if ((*object).tag == "ToMyMap") EventToMyMap();
+			if ((*object).tag == "None") EventTroll();
 
 			MainMap.deleteGameObject(object);
 		}
