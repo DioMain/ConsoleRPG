@@ -9,6 +9,7 @@
 #include "Vars.h"
 #include "GameLogic.h"
 #include "Compontent.h"
+#include "UI.h"
 
 using namespace std;
 using namespace CE;
