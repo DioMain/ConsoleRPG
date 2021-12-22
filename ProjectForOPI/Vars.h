@@ -14,6 +14,9 @@ using namespace std;
 namespace Game {
 	GameMap MainMap; // CURRENT LOAD MAP //
 	vector<GameMap> Maps = vector<GameMap>();
+	int MapId = 0;
+
+	bool IsLive = true;
 
 	vector<Enemy> Enemys = vector<Enemy>();
 
