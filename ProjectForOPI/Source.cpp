@@ -1,24 +1,44 @@
-#include "Libs.h"
-#include "Vars.cpp"
+#include <iostream>
+#include <conio.h>
+#include "DefaultMath.h"
+#include "GraphicEngine.h"
+#include "Physics.h"
+#include "Events.h"
+#include "Maps.h"
+#include "FightSystem.h"
+#include "Vars.h"
+#include "GameLogic.h"
 
 using namespace std;
+using namespace CE;
+using namespace Game;
 
 int main() {
 
 	///////////PRELOAD///////////
 
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	CONSOLE_CURSOR_INFO cursorInfo = CONSOLE_CURSOR_INFO();
+
+	cursorInfo.bVisible = FALSE;
+	cursorInfo.dwSize = 1;
+
+	SetConsoleCursorInfo(hConsole, &cursorInfo);
+
 	setlocale(LC_ALL, "ru");
 	srand((int)time(0));
 
+	MapsInisialize();
+
 	PreLoad();
-	
+
 	///////////PRELOAD///////////
 
-	while (IsLive) 
+	while (true) 
 	{
 		///////////BEFORE RENDER///////////
 
-		PreRenders();
+		BeforeRender();
 
 		///////////BEFORE RENDER///////////
 
@@ -26,7 +46,9 @@ int main() {
 
 		///////////AFTER RENDER///////////
 
-		PastRender();
+		AfterRender();
+
+		EventUnit();
 
 		///////////AFTER RENDER///////////
 	}

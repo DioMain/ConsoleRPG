@@ -13,33 +13,24 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Файлы заголовков\2Dview">
-      <UniqueIdentifier>{457b2fa2-537f-4bfe-ad61-ac7e114f132f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Файлы заголовков\Game">
       <UniqueIdentifier>{e54977aa-a625-421a-ac29-cd247ca239bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\ConsoleEngine">
+      <UniqueIdentifier>{457b2fa2-537f-4bfe-ad61-ac7e114f132f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Vars.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DefaultMath.h">
-      <Filter>Файлы заголовков\2Dview</Filter>
+      <Filter>Файлы заголовков\ConsoleEngine</Filter>
     </ClInclude>
     <ClInclude Include="GraphicEngine.h">
-      <Filter>Файлы заголовков\2Dview</Filter>
-    </ClInclude>
-    <ClInclude Include="Physics.h">
-      <Filter>Файлы заголовков\2Dview</Filter>
+      <Filter>Файлы заголовков\ConsoleEngine</Filter>
     </ClInclude>
     <ClInclude Include="Maps.h">
       <Filter>Файлы заголовков\Game</Filter>
@@ -47,8 +38,20 @@
     <ClInclude Include="Events.h">
       <Filter>Файлы заголовков\Game</Filter>
     </ClInclude>
-    <ClInclude Include="Libs.h">
-      <Filter>Файлы заголовков\2Dview</Filter>
+    <ClInclude Include="Physics.h">
+      <Filter>Файлы заголовков\ConsoleEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="FightSystem.h">
+      <Filter>Файлы заголовков\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="UI.h">
+      <Filter>Файлы заголовков\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Vars.h">
+      <Filter>Файлы заголовков\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GameLogic.h">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
