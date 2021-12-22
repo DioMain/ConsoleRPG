@@ -39,13 +39,13 @@ void AfterRender() {
 
 	// INPUT MANAGER //
 
-	if ((Key == 'w' || Key == 'W' || Key == 'ö' || Key == 'Ö')
+	if ((Key == 'w' || Key == 'W')
 		&& !Collision::NearDirectionWithWall(&MainMap, &Player, CollisionDirection(Up))) Player.position.y--;
-	else if ((Key == 's' || Key == 'S' || Key == 'û' || Key == 'Û')
+	else if ((Key == 's' || Key == 'S')
 		&& !Collision::NearDirectionWithWall(&MainMap, &Player, CollisionDirection(Down))) Player.position.y++;
-	else if ((Key == 'd' || Key == 'D' || Key == 'â' || Key == 'Â')
+	else if ((Key == 'd' || Key == 'D')
 		&& !Collision::NearDirectionWithWall(&MainMap, &Player, CollisionDirection(Right))) Player.position.x++;
-	else if ((Key == 'a' || Key == 'A' || Key == 'ô' || Key == 'Ô')
+	else if ((Key == 'a' || Key == 'A')
 		&& !Collision::NearDirectionWithWall(&MainMap, &Player, CollisionDirection(Left))) Player.position.x--;
 
 }
