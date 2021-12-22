@@ -14,6 +14,7 @@ using namespace std;
 namespace Game {
 	GameMap MainMap; // CURRENT LOAD MAP //
 	vector<GameMap> Maps = vector<GameMap>();
+	int MapId = 0;
 
 	vector<Enemy> Enemys = vector<Enemy>();
 
@@ -27,4 +28,5 @@ namespace Game {
 	GameObject Player(Vector2(5, 2), 'P', "Player");
 
 	CollisionDirection WallDir(None);
+
 }
