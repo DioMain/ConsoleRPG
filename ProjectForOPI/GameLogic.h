@@ -53,11 +53,8 @@ void AfterRender() {
 		&& !Collision::NearDirectionWithWall(&MainMap, &Player, CollisionDirection(Right))) Player.position.x++;
 	else if ((Key == 'a' || Key == 'A')
 		&& !Collision::NearDirectionWithWall(&MainMap, &Player, CollisionDirection(Left))) Player.position.x--;
-	else if (Key == 27) {
+	else if (Key == 27) MainMenu();
 
-
-		MainMenu();
-	}
 }
 
 
