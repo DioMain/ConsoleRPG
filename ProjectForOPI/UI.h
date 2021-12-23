@@ -50,7 +50,7 @@ namespace Game {
 		switch (choise)
 		{
 		case 0:
-			Player.position = Vector2(24, 10);
+			Player.position = Vector2(10, 10);
 			LoadMap(&MainMap, 0);
 			break;
 		case 1:

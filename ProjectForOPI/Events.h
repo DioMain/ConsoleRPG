@@ -118,17 +118,24 @@ namespace Game {
 		system("cls");
 	}
 
+	void EventToNextMap() {
+		system("cls");
+
+		LoadMap(&MainMap, 2);
+	}
+
 	void EventUnit() {
 		GameObject* object = Collision::Overlap(&MainMap, &Player);
 		if ((*object).type == ObjectType::action) {
 			if ((*object).tag == "Dumbbell") EventDumbbell();
 			if ((*object).tag == "Cumpot") EventCumpot();
-			if ((*object).tag == "Costumes") Event—ostume();
+			if ((*object).tag == "Costumes") EventCostume();
 			if ((*object).tag == "test") EventLucky();
 			if ((*object).tag == "Whip") EventWhip();
 			if ((*object).tag == "Train") EventTrain();
 			if ((*object).tag == "ToMyMap") EventToMyMap();
 			if ((*object).tag == "None") EventTroll();
+			if ((*object).tag == "ToNextMap") EventToNextMap();
 
 			MainMap.deleteGameObject(object);
 		}

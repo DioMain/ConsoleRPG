@@ -56,6 +56,6 @@ void AfterRender() {
 // Loading after end game curricular
 void PastLoad() {
 	std::system("CLS"); // CONSOLE CLEAR //
-
+	cout << "GAME OVER\n";
 	std::system("pause"); // CONSOLE WAIT INPUT ANY KEY //
 }

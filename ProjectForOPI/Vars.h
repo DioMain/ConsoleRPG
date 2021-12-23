@@ -26,8 +26,6 @@ namespace Game {
 	int Heal = 2000;
 	int Armor = 100;
 	int Damage = 250;
-	int Regan = 50;
-	int ReganArm = 2;
 
 	GameObject Player(Vector2(5, 2), 'P', "Player");
 
