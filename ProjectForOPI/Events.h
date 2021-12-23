@@ -141,7 +141,7 @@ namespace Game {
 
 		Player.position = Vector2(1, 4);
 
-		LoadMap(&MainMap, 2);
+		LoadMap(&MainMap, 3);
 
 		Save();
 	}
@@ -165,8 +165,38 @@ namespace Game {
 		Save();
 	}
 
-	void TestBattle() {
+	void EventToLastMap() {
+		system("cls");
+
+		Player.position = Vector2(1, 1);
+
+		LoadMap(&MainMap, 4);
+
+		Save();
+	}
+	
+	void Battle0() {
+		Fight(Enemys[0]);
+	}
+
+	void Battle1() {
 		Fight(Enemys[1]);
+	}
+
+	void Battle2() {
+		Fight(Enemys[2]);
+	}
+
+	void Battle3() {
+		Fight(Enemys[3]);
+	}
+
+	void Battle4() {
+		Fight(Enemys[4]);
+	}
+
+	void Battle5() {
+		Fight(Enemys[5]);
 	}
 
 	void EventUnit() {
@@ -181,8 +211,13 @@ namespace Game {
 			if ((*object).tag == "ToMyMap") EventToShMap();
 			if ((*object).tag == "ToDimas") EventToDimasMap();
 			if ((*object).tag == "None") EventTroll();
+			if ((*object).tag == "Battle0") Battle0();//BossOfTheGYM
+			if ((*object).tag == "Battle1") Battle1();//Trainer
+			if ((*object).tag == "Battle2") Battle2();//Security
+			if ((*object).tag == "Battle3") Battle3();//Manager
+			if ((*object).tag == "Battle4") Battle4();//Bodybuilder
+			if ((*object).tag == "Battle5") Battle5();//Pimple
 			if ((*object).tag == "ToNextMap") EventToILMap();
-			if ((*object).tag == "TestB") TestBattle();
 
 			MainMap.deleteGameObject(object);
 		}

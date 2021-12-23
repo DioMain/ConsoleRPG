@@ -342,11 +342,34 @@ namespace Game {
 		return map;
 	}
 
+	GameMap LastMap() {
+		GameMap map = GameMap(Vector2(80, 9), ' ');
+
+		for (int y = 0; y < map.getSize().y; y++) // WALL GENERATE //
+		{
+			for (int x = 0; x < map.getSize().x; x++)
+			{
+				if (y == 0 || y == map.getSize().y - 1) {
+					map.addGameObject(new GameObject(Vector2(x, y), '#', "Wall", ObjectType::wall));
+				}
+				else {
+					map.addGameObject(new GameObject(Vector2(0, y), '#', "Wall", ObjectType::wall));
+					map.addGameObject(new GameObject(Vector2(map.getSize().x - 1, y), '#', "Wall", ObjectType::wall));
+				}
+			}
+		}
+
+		map.addGameObject(&Player);
+
+		return map;
+	}
+
 	void MapsInisialize() {
 		Maps.push_back(DevMap());
 		Maps.push_back(ShMap());
 		Maps.push_back(ILMap());
 		Maps.push_back(DimasMap());
+		Maps.push_back(LastMap());
 	}
 
 	void LoadMap(GameMap* mainMap, int mapId) {
