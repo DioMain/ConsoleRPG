@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <iostream>
 #include <conio.h>
 #include "Vars.h"
@@ -10,6 +10,7 @@
 #include "FightSystem.h"
 #include "Compontent.h"
 #include "UI.h"
+#include "SaveLoad.h"
 
 using namespace std;
 using namespace CE;
@@ -31,11 +32,14 @@ void AfterRender() {
 	int Key = 0;
 
 	Heal = (Heal > MaxHeal) ? MaxHeal : Heal;
-	Armor = MaxArmor;
 
-	IsLive = (Heal <= 0) ? false : true;
+	if (Heal <= 0) {
+		IsLive = false;
+		return;
+	}
+	else true;
 
-	cout << "\nHEAL: " << Heal << '\t' << "ARMOR: " << Armor;
+	cout << "\nHEAL: " << Heal << '\t' << "ARMOR: " << Armor << endl;
 
 	Key = _getch();
 
@@ -49,13 +53,31 @@ void AfterRender() {
 		&& !Collision::NearDirectionWithWall(&MainMap, &Player, CollisionDirection(Right))) Player.position.x++;
 	else if ((Key == 'a' || Key == 'A')
 		&& !Collision::NearDirectionWithWall(&MainMap, &Player, CollisionDirection(Left))) Player.position.x--;
+	else if (Key == 27) {
 
+
+		MainMenu();
+	}
 }
 
 
 // Loading after end game curricular
 void PastLoad() {
 	std::system("CLS"); // CONSOLE CLEAR //
+
+	SetConsoleColor(CE::whitered);
+
+	char mess[] =
+		"##  ##   ####   ##  ##    ##   #####    #####   ######   ####   #####   ##\n"
+		"##  ##  ##  ##  ##  ##        ##        ##  ##  ##      ##  ##  ##  ##  ##\n"
+		" ####   ##  ##  ##  ##    ##  #####     ##  ##  ######  ######  ##  ##  ##\n"
+		"  ##    ##  ##  ##  ##    ##      ##    ##  ##  ##      ##  ##  ##  ##  ##\n"
+		"  ##    ##  ##  ##  ##    ##      ##    ##  ##  ##      ##  ##  ##  ##    \n"
+		"  ##     ####    ####     ##  #####     #####   ######  ##  ##  #####   ##\n\n\n";
+
+	cout << mess;
+
+	Sleep(2000);
 
 	std::system("pause"); // CONSOLE WAIT INPUT ANY KEY //
 }

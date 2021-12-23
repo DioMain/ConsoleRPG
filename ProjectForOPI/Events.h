@@ -8,6 +8,7 @@
 #include "Compontent.h"
 #include "GameLogic.h"
 #include "Maps.h"
+#include "SaveLoad.h"
 
 using namespace CE;
 using namespace std;
@@ -21,6 +22,8 @@ namespace Game {
 		cout << "You get dumbbells. Your damage increased by 50" << endl;
 		Damage = Damage + 50;
 
+		Sleep(500);
+
 		system("pause");
 		system("cls");
 	}
@@ -29,9 +32,10 @@ namespace Game {
 
 		system("cls");
 
-		cout << "You get BDSM costume. You get 20 max armor " << endl;
-		Armor = Armor + 20;
-		MaxArmor = MaxArmor + 20;
+		cout << "You get BDSM costume. You get 20 armor points" << endl;
+		Armor += 20;
+
+		Sleep(500);
 
 		system("pause");
 		system("cls");
@@ -45,6 +49,8 @@ namespace Game {
 		Heal = Heal + 500;
 		MaxHeal = MaxHeal + 500;
 
+		Sleep(500);
+
 		system("pause");
 		system("cls");
 	}
@@ -55,6 +61,8 @@ namespace Game {
 
 		cout << "You get whip. Your damage increased by 100" << endl;
 		Damage = Damage + 100;
+
+		Sleep(500);
 
 		system("pause");
 		system("cls");
@@ -77,14 +85,20 @@ namespace Game {
 		}
 		cout << "Your damage: " << Damage << endl;
 
+		Sleep(500);
+
 		system("pause");
 		system("cls");
 	}
 
-	void EventToMyMap() {
+	void EventToShMap() {
 		system("cls");
 
+		Player.position = Vector2(1, 1);
+
 		LoadMap(&MainMap, 1);
+
+		Save();
 	}
 
 	void EventTroll() {
@@ -96,6 +110,10 @@ namespace Game {
 		system("cls");
 	}
 
+	void TestBattle() {
+		Fight(Enemys[1]);
+	}
+
 	void EventUnit() {
 		GameObject* object = Collision::Overlap(&MainMap, &Player);
 
@@ -105,8 +123,9 @@ namespace Game {
 			if ((*object).tag == "Costumes") EventCostume();
 			if ((*object).tag == "Whip") EventWhip();
 			if ((*object).tag == "Train") EventTrain();
-			if ((*object).tag == "ToMyMap") EventToMyMap();
+			if ((*object).tag == "ToMyMap") EventToShMap();
 			if ((*object).tag == "None") EventTroll();
+			if ((*object).tag == "TestB") TestBattle();
 
 			MainMap.deleteGameObject(object);
 		}
