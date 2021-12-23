@@ -117,7 +117,7 @@ namespace Game {
 
 		Player.position = Vector2(1, 1);
 
-		LoadMap(&MainMap, 1);
+		LoadMap(&MainMap, 2);
 
 		Save();
 	}
@@ -146,7 +146,7 @@ namespace Game {
 
 		Player.position = Vector2(46, 23);
 
-		LoadMap(&MainMap, 2);
+		LoadMap(&MainMap, 1);
 
 		Save();
 	}
@@ -154,7 +154,7 @@ namespace Game {
 	void EventToLastMap() {
 		system("cls");
 
-		Player.position = Vector2(1, 1);
+		Player.position = Vector2(1, 7);
 
 		LoadMap(&MainMap, 4);
 
@@ -187,6 +187,7 @@ namespace Game {
 
 	void EventUnit() {
 		GameObject* object = Collision::Overlap(&MainMap, &Player);
+
 		if ((*object).type == ObjectType::action) {
 			if ((*object).tag == "Dumbbell") EventDumbbell();
 			if ((*object).tag == "Cumpot") EventCumpot();
@@ -197,12 +198,12 @@ namespace Game {
 			if ((*object).tag == "ToMyMap") EventToShMap();
 			if ((*object).tag == "ToDimas") EventToDimasMap();
 			if ((*object).tag == "None") EventTroll();
-			if ((*object).tag == "Battle0") Battle0();//BossOfTheGYM
-			if ((*object).tag == "Battle1") Battle1();//Trainer
-			if ((*object).tag == "Battle2") Battle2();//Security
-			if ((*object).tag == "Battle3") Battle3();//Manager
-			if ((*object).tag == "Battle4") Battle4();//Bodybuilder
-			if ((*object).tag == "Battle5") Battle5();//Pimple
+			if ((*object).tag == "Battle0") Battle0(); // BossOfTheGYM
+			if ((*object).tag == "Battle1") Battle1(); // Trainer
+			if ((*object).tag == "Battle2") Battle2(); // Security
+			if ((*object).tag == "Battle3") Battle3(); // Manager
+			if ((*object).tag == "Battle4") Battle4(); // Bodybuilder
+			if ((*object).tag == "Battle5") Battle5(); // Pimple
 			if ((*object).tag == "ToNextMap") EventToNextMap();
 
 			MainMap.deleteGameObject(object);
