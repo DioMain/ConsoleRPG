@@ -8,6 +8,7 @@
 #include "Compontent.h"
 #include "GameLogic.h"
 #include "Maps.h"
+#include "SaveLoad.h"
 
 using namespace CE;
 using namespace std;
@@ -40,6 +41,8 @@ namespace Game {
 		Damage = Damage + 50;
 		cout << "You Damage: " << Damage << endl;
 
+		Sleep(500);
+
 		system("pause");
 		system("cls");
 	}
@@ -48,10 +51,10 @@ namespace Game {
 
 		system("cls");
 
-		cout << "You get BDSM costume. You get 20 max armor " << endl;
-		Armor = Armor + 20;
-		MaxArmor = MaxArmor + 20;
-		cout << "Your Max Armor: " << MaxArmor << endl;
+		cout << "You get BDSM costume. You get 20 armor points" << endl;
+		Armor += 20;
+
+		Sleep(500);
 
 		system("pause");
 		system("cls");
@@ -66,6 +69,8 @@ namespace Game {
 		MaxHeal = MaxHeal + 500;
 		cout << "Your Max Helth: " << MaxHeal << endl;
 
+		Sleep(500);
+
 		system("pause");
 		system("cls");
 	}
@@ -77,6 +82,8 @@ namespace Game {
 		cout << "You get whip. Your damage increased by 100" << endl;
 		Damage = Damage + 100;
 		cout << "Your Damage: " << Damage << endl;
+
+		Sleep(500);
 
 		system("pause");
 		system("cls");
@@ -99,14 +106,20 @@ namespace Game {
 		}
 		cout << "Your damage: " << Damage << endl;
 
+		Sleep(500);
+
 		system("pause");
 		system("cls");
 	}
 
-	void EventToMyMap() {
+	void EventToShMap() {
 		system("cls");
 
+		Player.position = Vector2(1, 1);
+
 		LoadMap(&MainMap, 1);
+
+		Save();
 	}
 
 	void EventTroll() {
@@ -124,6 +137,10 @@ namespace Game {
 		LoadMap(&MainMap, 2);
 	}
 
+	void TestBattle() {
+		Fight(Enemys[1]);
+	}
+
 	void EventUnit() {
 		GameObject* object = Collision::Overlap(&MainMap, &Player);
 		if ((*object).type == ObjectType::action) {
@@ -133,8 +150,9 @@ namespace Game {
 			if ((*object).tag == "test") EventLucky();
 			if ((*object).tag == "Whip") EventWhip();
 			if ((*object).tag == "Train") EventTrain();
-			if ((*object).tag == "ToMyMap") EventToMyMap();
+			if ((*object).tag == "ToMyMap") EventToShMap();
 			if ((*object).tag == "None") EventTroll();
+			if ((*object).tag == "TestB") TestBattle();
 			if ((*object).tag == "ToNextMap") EventToNextMap();
 
 			MainMap.deleteGameObject(object);
