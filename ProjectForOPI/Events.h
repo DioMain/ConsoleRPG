@@ -22,6 +22,8 @@ namespace Game {
 		cout << "You get dumbbells. Your damage increased by 50" << endl;
 		Damage = Damage + 50;
 
+		Sleep(500);
+
 		system("pause");
 		system("cls");
 	}
@@ -32,6 +34,8 @@ namespace Game {
 
 		cout << "You get BDSM costume. You get 20 armor points" << endl;
 		Armor += 20;
+
+		Sleep(500);
 
 		system("pause");
 		system("cls");
@@ -45,6 +49,8 @@ namespace Game {
 		Heal = Heal + 500;
 		MaxHeal = MaxHeal + 500;
 
+		Sleep(500);
+
 		system("pause");
 		system("cls");
 	}
@@ -55,6 +61,8 @@ namespace Game {
 
 		cout << "You get whip. Your damage increased by 100" << endl;
 		Damage = Damage + 100;
+
+		Sleep(500);
 
 		system("pause");
 		system("cls");
@@ -76,6 +84,8 @@ namespace Game {
 			}
 		}
 		cout << "Your damage: " << Damage << endl;
+
+		Sleep(500);
 
 		system("pause");
 		system("cls");
