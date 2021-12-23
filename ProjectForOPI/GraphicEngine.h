@@ -252,6 +252,7 @@ namespace CE {
 		whiteblue
 	};
 
+	//Тут русский текст
 	void SetConsoleColor(ConsoleColor color) {
 		HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
