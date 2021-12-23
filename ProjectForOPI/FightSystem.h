@@ -16,12 +16,12 @@ namespace Game {
 
 	void EnemysUnit()
 	{
-		Enemy BossOfTheGYM(2500, 75, 220, "BossOfTheGYM", "BossOfTheGYM - kind on the outside, cruel on the inside, who is always ready to back you up from behind");
-		Enemy Trainer(500, 50, 100, "Trainer", "If he is not paid, then he is very angry ...\nHe was not paid ...");
-		Enemy Security(850, 50, 110, "Security", "With its protein-filled nose, it feels your ass from far away");
-		Enemy Manager(600, 50, 75, "Manager", "Takes tribute from new visitors, dislikes intruders, very much");
-		Enemy Bodybuilder(1050, 30, 120, "Bodybuilder" "GYM Old, loves protein drinks and himself");
-		Enemy Pimple(245, 10, 10, "pimple", "beginner, wants to show that he is the coolest, usually arrogant");
+		Enemy BossOfTheGYM(3500, 75, 220, "BossOfTheGYM", "BossOfTheGYM - kind on the outside, cruel on the inside, who is always ready to back you up from behind");
+		Enemy Trainer(500, 25, 90, "Trainer", "If he is not paid, then he is very angry ...\nHe was not paid ...");
+		Enemy Security(850, 30, 100, "Security", "With its protein-filled nose, it feels your ass from far away");
+		Enemy Manager(600, 27, 65, "Manager", "Takes tribute from new visitors, dislikes intruders, very much");
+		Enemy Bodybuilder(1050, 15, 100, "Bodybuilder" "GYM Old, loves protein drinks and himself");
+		Enemy Pimple(245, 10, 30, "pimple", "beginner, wants to show that he is the coolest, usually arrogant");
 
 		Enemys.push_back(BossOfTheGYM);
 		Enemys.push_back(Trainer);
