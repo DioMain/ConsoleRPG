@@ -16,15 +16,19 @@ namespace Game {
 
 	void EnemysUnit()
 	{
-		Enemy BossOfTheGYM(5000, 150, 500, "BossOfTheGYM", "BossOfTheGYM - kind on the outside, cruel on the inside, who is always ready to back you up from behind");
-		Enemy Trainer(1500, 50, 150, "Trainer", "If he is not paid, then he is very angry ...\nHe was not paid ...");
-		Enemy Security(1500, 50, 150, "Trainer", "If he is not paid, then he is very angry ...\nHe was not paid ...");
-		Enemy Manager(1500, 50, 150, "Trainer", "If he is not paid, then he is very angry ...\nHe was not paid ...");
-		Enemy Bodybuilder(1500, 50, 150, "Trainer", "If he is not paid, then he is very angry ...\nHe was not paid ...");
-		Enemy pimple(1500, 50, 150, "Trainer", "If he is not paid, then he is very angry ...\nHe was not paid ...");
+		Enemy BossOfTheGYM(2500, 75, 220, "BossOfTheGYM", "BossOfTheGYM - kind on the outside, cruel on the inside, who is always ready to back you up from behind");
+		Enemy Trainer(500, 50, 100, "Trainer", "If he is not paid, then he is very angry ...\nHe was not paid ...");
+		Enemy Security(850, 50, 110, "Security", "With its protein-filled nose, it feels your ass from far away");
+		Enemy Manager(600, 50, 75, "Manager", "Takes tribute from new visitors, dislikes intruders, very much");
+		Enemy Bodybuilder(1050, 30, 120, "Bodybuilder" "GYM Old, loves protein drinks and himself");
+		Enemy Pimple(245, 10, 10, "pimple", "beginner, wants to show that he is the coolest, usually arrogant");
 
 		Enemys.push_back(BossOfTheGYM);
 		Enemys.push_back(Trainer);
+		Enemys.push_back(Security);
+		Enemys.push_back(Manager);
+		Enemys.push_back(Bodybuilder);
+		Enemys.push_back(Pimple);
 	}
 	
 	int GetDamage(int damage, int armor) {
