@@ -154,7 +154,7 @@ namespace Game {
 		return map;
 	}
 
-	GameMap AsMap() {
+	GameMap ILMap() {
 		GameMap map(Vector2(50, 25), ' ');
 
 		for (int y = 0; y < map.getSize().y; y++) // WALL GENERATE //
@@ -312,12 +312,9 @@ namespace Game {
 
 		Player.position = Vector2(1, 1);
 
-		map.addGameObject(new GameObject(Vector2(10, 4), '*', "dumbbell", ObjectType::action));
-		map.addGameObject(new GameObject(Vector2(35, 22), 'b', "costumes", ObjectType::action));
-		map.addGameObject(new GameObject(Vector2(40, 5), 'c', "cumpot", ObjectType::action));
-		map.addGameObject(new GameObject(Vector2(40, 10), '~', "whip", ObjectType::action));
-		map.addGameObject(new GameObject(Vector2(30, 10), ':', "train", ObjectType::action));
-		map.addGameObject(new GameObject(Vector2(3, 20), '?', "none", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(2, 15), 'B', "Costumes", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(40, 5), '?', "Lucky", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(30, 7), ':', "Train", ObjectType::action));
 		map.addGameObject(&Player);
 
 		return map;
@@ -348,7 +345,7 @@ namespace Game {
 	void MapsInisialize() {
 		Maps.push_back(DevMap());
 		Maps.push_back(ShMap());
-		Maps.push_back(AsMap());
+		Maps.push_back(ILMap());
 		Maps.push_back(DimasMap());
 	}
 

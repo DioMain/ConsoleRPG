@@ -65,11 +65,11 @@ namespace Game {
 		switch (choise)
 		{
 		case 0:
-			Player.position = Vector2(23, 11);
+			Player.position = Vector2(, 11);
 
 			ResetVars();
 
-			LoadMap(&MainMap, 0);
+			LoadMap(&MainMap, 2);
 			break;
 		case 1:
 			Load();
