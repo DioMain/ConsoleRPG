@@ -20,15 +20,25 @@ namespace Game {
 
 	vector<Enemy> Enemys = vector<Enemy>();
 
-	int MaxHeal = 2000;
-	int MaxStamina = 20;
+	int MaxHeal = 0;
+	int MaxStamina = 0;
 
-	int Heal = 1000;
-	int Armor = 20;
-	int Damage = 50;
+	int Heal = 0;
+	int Armor = 0;
+	int Damage = 0;
 
 	GameObject Player(Vector2(5, 2), 'P', "Player");
 
 	CollisionDirection WallDir(None);
 
+	void ResetVars() {
+		MaxHeal = 1000;
+		MaxStamina = 20;
+
+		Heal = 1000;
+		Armor = 20;
+		Damage = 50;
+
+		IsLive = true;
+	}
 }

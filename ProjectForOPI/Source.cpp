@@ -1,5 +1,6 @@
 #include <iostream>
 #include <conio.h>
+#include <Windows.h>
 #include "DefaultMath.h"
 #include "GraphicEngine.h"
 #include "Physics.h"
@@ -28,6 +29,8 @@ int main() { // ONCE IN THE GYM //
 
 	CE::SetConsoleColor(CE::white);
 
+	SetConsoleCP(CP_UTF8);
+	SetConsoleOutputCP(CP_UTF8);
 	srand((int)time(0));
 	
 	EnemysUnit();

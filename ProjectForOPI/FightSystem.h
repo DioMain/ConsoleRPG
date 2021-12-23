@@ -32,6 +32,8 @@ namespace Game {
 
 		cout << enemy.name << " attack you!" << endl;
 
+		Sleep(500);
+
 		std::system("pause");
 		std::system("cls");
 
@@ -156,6 +158,8 @@ namespace Game {
 				system("cls");
 
 				cout << "You winner!!!" << endl;
+
+				Sleep(500);
 
 				system("pause");
 

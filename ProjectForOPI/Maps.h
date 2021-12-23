@@ -152,6 +152,26 @@ namespace Game {
 		return map;
 	}
 
+	GameMap DimasMap() {
+		GameMap map(Vector2(50, 10), ' ');
+
+		for (int y = 0; y < map.getSize().y; y++) // WALL GENERATE //
+		{
+			for (int x = 0; x < map.getSize().x; x++)
+			{
+				if (y == 0 || y == map.getSize().y - 1) {
+					map.addGameObject(new GameObject(Vector2(x, y), '#', "Wall", ObjectType::wall));
+				}
+				else {
+					map.addGameObject(new GameObject(Vector2(0, y), '#', "Wall", ObjectType::wall));
+					map.addGameObject(new GameObject(Vector2(map.getSize().x - 1, y), '#', "Wall", ObjectType::wall));
+				}
+			}
+		}
+
+		return map;
+	}
+
 	void MapsInisialize() {
 		Maps.push_back(DevMap());
 		Maps.push_back(ShMap());
