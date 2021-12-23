@@ -8,11 +8,30 @@
 #include "Compontent.h"
 #include "GameLogic.h"
 #include "Maps.h"
+#include "SaveLoad.h"
 
 using namespace CE;
 using namespace std;
 
 namespace Game {
+	
+	void EventLucky() {
+		system("cls");
+
+		cout << "You drink unknown liquid. You ";
+		int ran = 5;
+		switch (ran) {
+			case 1: { cout << "get damage 300\n"; Heal = Heal - 300;} break;
+			case 2: { cout << "get regeneration\n"; /*Regan = Regan = 10*/; } break;
+			case 3: { cout << "lose all armor\n"; Armor = 0; } break;
+			case 4: { cout << "are became very strong. You get 300 damage. Your Damege: "; Damage = Damage + 300; 
+					cout << Damage << endl; } break;
+			case 5: { cout << "are very unlucky. You poisoned and you have only 1 Heal\n"; Heal = 1; } break;
+		}
+		
+		system("pause");
+		system("cls");
+	}
 
 	void EventDumbbell() {
 
@@ -20,6 +39,9 @@ namespace Game {
 
 		cout << "You get dumbbells. Your damage increased by 50" << endl;
 		Damage = Damage + 50;
+		cout << "You Damage: " << Damage << endl;
+
+		Sleep(500);
 
 		system("pause");
 		system("cls");
@@ -29,9 +51,10 @@ namespace Game {
 
 		system("cls");
 
-		cout << "You get BDSM costume. You get 20 max armor " << endl;
-		Armor = Armor + 20;
-		MaxArmor = MaxArmor + 20;
+		cout << "You get BDSM costume. You get 20 armor points" << endl;
+		Armor += 20;
+
+		Sleep(500);
 
 		system("pause");
 		system("cls");
@@ -44,6 +67,9 @@ namespace Game {
 		cout << "You drink cumpot. You get max heal 500" << endl;
 		Heal = Heal + 500;
 		MaxHeal = MaxHeal + 500;
+		cout << "Your Max Helth: " << MaxHeal << endl;
+
+		Sleep(500);
 
 		system("pause");
 		system("cls");
@@ -55,6 +81,9 @@ namespace Game {
 
 		cout << "You get whip. Your damage increased by 100" << endl;
 		Damage = Damage + 100;
+		cout << "Your Damage: " << Damage << endl;
+
+		Sleep(500);
 
 		system("pause");
 		system("cls");
@@ -77,15 +106,32 @@ namespace Game {
 		}
 		cout << "Your damage: " << Damage << endl;
 
+		Sleep(500);
+
 		system("pause");
 		system("cls");
 	}
 
-	void EventToMyMap() {
+	void EventToShMap() {
 		system("cls");
 
+		Player.position = Vector2(1, 1);
+
 		LoadMap(&MainMap, 1);
+
+		Save();
 	}
+
+	void EventToDimasMap() {
+		system("cls");
+
+		Player.position = Vector2(1, 4);
+
+		LoadMap(&MainMap, 2);
+
+		Save();
+	}
+
 	void EventTroll() {
 		system("cls");
 
@@ -95,17 +141,34 @@ namespace Game {
 		system("cls");
 	}
 
+	void EventToNextMap() {
+		system("cls");
+
+		Player.position = Vector2(46, 23);
+
+		LoadMap(&MainMap, 2);
+
+		Save();
+	}
+
+	void TestBattle() {
+		Fight(Enemys[1]);
+	}
+
 	void EventUnit() {
 		GameObject* object = Collision::Overlap(&MainMap, &Player);
-
 		if ((*object).type == ObjectType::action) {
 			if ((*object).tag == "Dumbbell") EventDumbbell();
 			if ((*object).tag == "Cumpot") EventCumpot();
 			if ((*object).tag == "Costumes") EventCostume();
+			if ((*object).tag == "test") EventLucky();
 			if ((*object).tag == "Whip") EventWhip();
 			if ((*object).tag == "Train") EventTrain();
-			if ((*object).tag == "ToMyMap") EventToMyMap();
+			if ((*object).tag == "ToMyMap") EventToShMap();
+			if ((*object).tag == "ToDimas") EventToDimasMap();
 			if ((*object).tag == "None") EventTroll();
+			if ((*object).tag == "TestB") TestBattle();
+			if ((*object).tag == "ToNextMap") EventToNextMap();
 
 			MainMap.deleteGameObject(object);
 		}
