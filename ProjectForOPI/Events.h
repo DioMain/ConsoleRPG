@@ -22,11 +22,21 @@ namespace Game {
 		int ran = 5;
 		switch (ran) {
 			case 1: { cout << "get damage 300\n"; Heal = Heal - 300;} break;
-			case 2: { cout << "get regeneration\n"; /*Regan = Regan = 10*/; } break;
-			case 3: { cout << "lose all armor\n"; Armor = 0; } break;
-			case 4: { cout << "are became very strong. You get 300 damage. Your Damege: "; Damage = Damage + 300; 
+			case 2: { cout << "lose all armor\n"; Armor = 0; } break;
+			case 3: { cout << "are became very strong. You get 300 damage. Your Damege: "; Damage = Damage + 300; 
 					cout << Damage << endl; } break;
-			case 5: { cout << "are very unlucky. You poisoned and you have only 1 Heal\n"; Heal = 1; } break;
+			case 4: { cout << "are very unlucky. You poisoned and you have only 1 Heal\n"; Heal = 1; } break;
+			case 5: { cout << "feel great. Your max stamina has increased by 10"; MaxStamina = 20; }
+			case 6: {
+				int i = 1;
+				char Key = 0;
+				cout << "sleep. You will sleep 10 steps. Press F to train"; 
+				Key = _getch();
+				if (Key == 'F' || Key == 'f') {
+					cout << "Step " << i;
+					i++;
+				}
+			}
 		}
 		
 		system("pause");
