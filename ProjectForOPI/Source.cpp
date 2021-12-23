@@ -26,6 +26,8 @@ int main() { // ONCE IN THE GYM //
 
 	SetConsoleCursorInfo(hConsole, &cursorInfo);
 
+	CE::SetConsoleColor(CE::white);
+
 	setlocale(LC_ALL, "ru");
 	srand((int)time(0));
 	
@@ -39,6 +41,8 @@ int main() { // ONCE IN THE GYM //
 
 	while (IsLive) 
 	{
+		SetConsoleCursorInfo(hConsole, &cursorInfo);
+
 		///////////BEFORE RENDER///////////
 
 		BeforeRender();
