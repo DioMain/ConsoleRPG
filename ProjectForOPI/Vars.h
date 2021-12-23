@@ -36,8 +36,8 @@ namespace Game {
 		MaxStamina = 20;
 
 		Heal = 1000;
-		Armor = 20;
-		Damage = 50;
+		Armor = 25;
+		Damage = 80;
 
 		IsLive = true;
 	}
