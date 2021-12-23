@@ -26,7 +26,7 @@ namespace Game {
 			case 3: { cout << "are became very strong. You get 300 damage. Your Damege: "; Damage = Damage + 300; 
 					cout << Damage << endl; } break;
 			case 4: { cout << "are very unlucky. You poisoned and you have only 1 Heal\n"; Heal = 1; } break;
-			case 5: { cout << "feel great. Your max stamina has increased by 10\n"; MaxStamina = 20; } break;
+			case 5: { cout << "feel great. Your max stamina has increased by 10\n"; MaxStamina += 10; } break;
 			case 6: {
 				int i = 1;
 				char Key = 0;

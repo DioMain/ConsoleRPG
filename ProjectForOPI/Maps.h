@@ -315,6 +315,10 @@ namespace Game {
 		map.addGameObject(new GameObject(Vector2(2, 15), 'B', "Costumes", ObjectType::action));
 		map.addGameObject(new GameObject(Vector2(40, 5), '?', "Lucky", ObjectType::action));
 		map.addGameObject(new GameObject(Vector2(30, 7), ':', "Train", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(33, 20), 'p', "Battle5", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(7, 21), 'M', "Battle3", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(43, 10), 'T', "Battle1", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(48, 12), 'N', "ToMyMap", ObjectType::action));
 		map.addGameObject(&Player);
 
 		return map;
