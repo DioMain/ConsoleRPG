@@ -33,6 +33,7 @@ namespace Game {
 		map.addGameObject(new GameObject(Vector2(25, 15), 'B', "Whip", ObjectType::action));
 		map.addGameObject(new GameObject(Vector2(40, 15), 'C', "Train", ObjectType::action));
 		map.addGameObject(new GameObject(Vector2(35, 10), 'T', "ToMyMap", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(40, 10), 'D', "ToDimas", ObjectType::action));
 		map.addGameObject(new GameObject(Vector2(30, 10), 'F', "TestB", ObjectType::action));
 		map.addGameObject(&Player);
 
@@ -323,7 +324,7 @@ namespace Game {
 	}
 
 	GameMap DimasMap() {
-		GameMap map(Vector2(50, 10), ' ');
+		GameMap map = GameMap(Vector2(80, 9), ' ');
 
 		for (int y = 0; y < map.getSize().y; y++) // WALL GENERATE //
 		{
@@ -339,6 +340,8 @@ namespace Game {
 			}
 		}
 
+		map.addGameObject(&Player);
+
 		return map;
 	}
 
@@ -346,6 +349,7 @@ namespace Game {
 		Maps.push_back(DevMap());
 		Maps.push_back(ShMap());
 		Maps.push_back(AsMap());
+		Maps.push_back(DimasMap());
 	}
 
 	void LoadMap(GameMap* mainMap, int mapId) {

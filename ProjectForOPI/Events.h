@@ -132,6 +132,16 @@ namespace Game {
 		Save();
 	}
 
+	void EventToDimasMap() {
+		system("cls");
+
+		Player.position = Vector2(1, 4);
+
+		LoadMap(&MainMap, 2);
+
+		Save();
+	}
+
 	void EventTroll() {
 		system("cls");
 
@@ -165,6 +175,7 @@ namespace Game {
 			if ((*object).tag == "Whip") EventWhip();
 			if ((*object).tag == "Train") EventTrain();
 			if ((*object).tag == "ToMyMap") EventToShMap();
+			if ((*object).tag == "ToDimas") EventToDimasMap();
 			if ((*object).tag == "None") EventTroll();
 			if ((*object).tag == "TestB") TestBattle();
 			if ((*object).tag == "ToNextMap") EventToNextMap();
