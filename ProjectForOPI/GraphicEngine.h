@@ -233,6 +233,81 @@ namespace CE {
 		Vector2 size; // map size
 
 	};
+
+	enum ConsoleColor {
+		white,
+		black,
+		gray,
+		darkgray,
+		red,
+		blue,
+		green,
+		orange,
+		cyan,
+		darkcyan,
+		whitegreen,
+		purple,
+		pink,
+		whitered,
+		whiteblue
+	};
+
+	void SetConsoleColor(ConsoleColor color) {
+		HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+
+		DWORD textStyle = DWORD();
+
+		switch (color)
+		{
+		case CE::white:
+			textStyle = FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_INTENSITY;
+			break;
+		case CE::black:
+			textStyle;
+			break;
+		case CE::gray:
+			textStyle = FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED;
+			break;
+		case CE::darkgray:
+			textStyle = FOREGROUND_INTENSITY;
+			break;
+		case CE::red:
+			textStyle = FOREGROUND_RED;
+			break;
+		case CE::blue:
+			textStyle = FOREGROUND_BLUE;
+			break;
+		case CE::green:
+			textStyle = FOREGROUND_GREEN;
+			break;
+		case CE::orange:
+			textStyle = FOREGROUND_GREEN | FOREGROUND_RED;
+			break;
+		case CE::cyan:
+			textStyle = FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY;
+			break;
+		case CE::darkcyan:
+			textStyle = FOREGROUND_BLUE | FOREGROUND_GREEN;
+			break;
+		case CE::whitegreen:
+			textStyle = FOREGROUND_GREEN | FOREGROUND_INTENSITY;
+			break;
+		case CE::purple:
+			textStyle = FOREGROUND_BLUE | FOREGROUND_RED;
+			break;
+		case CE::pink:
+			textStyle = FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_INTENSITY;
+			break;
+		case CE::whitered:
+			textStyle = FOREGROUND_RED | FOREGROUND_INTENSITY;
+			break;
+		case CE::whiteblue:
+			textStyle = FOREGROUND_BLUE | FOREGROUND_INTENSITY;
+			break;
+		}
+
+		SetConsoleTextAttribute(hConsole, textStyle);
+	}
 }
 
 
