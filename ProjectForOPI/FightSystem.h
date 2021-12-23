@@ -20,7 +20,7 @@ namespace Game {
 		Enemy Trainer(500, 25, 90, "Trainer", "If he is not paid, then he is very angry ...\nHe was not paid ...");
 		Enemy Security(850, 30, 100, "Security", "With its protein-filled nose, it feels your ass from far away");
 		Enemy Manager(600, 27, 65, "Manager", "Takes tribute from new visitors, dislikes intruders, very much");
-		Enemy Bodybuilder(1050, 15, 100, "Bodybuilder" "GYM Old, loves protein drinks and himself");
+		Enemy Bodybuilder(1050, 15, 100, "Bodybuilder", "GYM Old, loves protein drinks and himself");
 		Enemy Pimple(245, 10, 30, "pimple", "beginner, wants to show that he is the coolest, usually arrogant");
 
 		Enemys.push_back(BossOfTheGYM);
