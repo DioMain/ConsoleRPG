@@ -47,6 +47,15 @@ void Load() {
 		case 1:
 			Player.position = Vector2(1, 1);
 			break;
+		case 2:
+			Player.position = Vector2(46, 23);
+			break;
+		case 3:
+			Player.position = Vector2(1, 4);
+			break;
+		case 4:
+			Player.position = Vector2(1, 1);
+			break;
 		}
 
 		LoadMap(&MainMap, MapId);

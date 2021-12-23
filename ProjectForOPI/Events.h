@@ -127,7 +127,7 @@ namespace Game {
 
 		Player.position = Vector2(1, 4);
 
-		LoadMap(&MainMap, 2);
+		LoadMap(&MainMap, 3);
 
 		Save();
 	}
@@ -150,6 +150,16 @@ namespace Game {
 
 		Save();
 	}
+
+	void EventToLastMap() {
+		system("cls");
+
+		Player.position = Vector2(1, 1);
+
+		LoadMap(&MainMap, 4);
+
+		Save();
+	}
 	
 	void Battle0() {
 		Fight(Enemys[0]);
@@ -158,15 +168,19 @@ namespace Game {
 	void Battle1() {
 		Fight(Enemys[1]);
 	}
+
 	void Battle2() {
 		Fight(Enemys[2]);
 	}
+
 	void Battle3() {
 		Fight(Enemys[3]);
 	}
+
 	void Battle4() {
 		Fight(Enemys[4]);
 	}
+
 	void Battle5() {
 		Fight(Enemys[5]);
 	}
