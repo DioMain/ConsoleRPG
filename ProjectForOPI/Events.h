@@ -134,7 +134,11 @@ namespace Game {
 	void EventToNextMap() {
 		system("cls");
 
+		Player.position = Vector2(46, 23);
+
 		LoadMap(&MainMap, 2);
+
+		Save();
 	}
 
 	void TestBattle() {
