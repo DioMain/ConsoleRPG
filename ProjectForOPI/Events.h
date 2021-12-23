@@ -218,7 +218,6 @@ namespace Game {
 			if ((*object).tag == "Battle3") Battle3(); // Manager
 			if ((*object).tag == "Battle4") Battle4(); // Bodybuilder
 			if ((*object).tag == "Battle5") Battle5(); // Pimple
-			if ((*object).tag == "ToNextMap") EventToNextMap();
 
 			MainMap.deleteGameObject(object);
 		}

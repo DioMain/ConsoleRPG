@@ -361,7 +361,7 @@ namespace Game {
 
 	void MapsInisialize() {
 		Maps.push_back(DevMap());
-		Maps.push_back(AsMap());
+		Maps.push_back(ILMap());
 		Maps.push_back(ShMap());
 		Maps.push_back(DimasMap());
 		Maps.push_back(LastMap());
