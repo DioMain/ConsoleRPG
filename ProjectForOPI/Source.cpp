@@ -28,7 +28,6 @@ int main() { // ONCE IN THE GYM //
 
 	CE::SetConsoleColor(CE::white);
 
-	setlocale(LC_ALL, "ru");
 	srand((int)time(0));
 	
 	EnemysUnit();
