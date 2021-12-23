@@ -308,10 +308,6 @@ namespace Game {
 		map.addGameObject(new GameObject(Vector2(30, 23), '#', "Wall", ObjectType::wall));
 		map.addGameObject(new GameObject(Vector2(30, 22), '#', "Wall", ObjectType::wall));
 
-
-
-		Player.position = Vector2(1, 1);
-
 		map.addGameObject(new GameObject(Vector2(10, 4), '*', "dumbbell", ObjectType::action));
 		map.addGameObject(new GameObject(Vector2(35, 22), 'b', "costumes", ObjectType::action));
 		map.addGameObject(new GameObject(Vector2(40, 5), 'c', "cumpot", ObjectType::action));
@@ -340,6 +336,19 @@ namespace Game {
 			}
 		}
 
+		map.addGameObject(new GameObject(Vector2(0, 0), '#', "Wall", ObjectType::wall));
+		map.addGameObject(new GameObject(Vector2(0, 0), '#', "Wall", ObjectType::wall));
+		map.addGameObject(new GameObject(Vector2(0, 0), '#', "Wall", ObjectType::wall));
+		map.addGameObject(new GameObject(Vector2(0, 0), '#', "Wall", ObjectType::wall));
+
+		map.addGameObject(&Player);
+
+		return map;
+	}
+
+	GameMap LastMap() {
+		GameMap map = GameMap(Vector2(80, 9), ' ');
+
 		map.addGameObject(&Player);
 
 		return map;
@@ -347,9 +356,10 @@ namespace Game {
 
 	void MapsInisialize() {
 		Maps.push_back(DevMap());
-		Maps.push_back(ShMap());
 		Maps.push_back(AsMap());
+		Maps.push_back(ShMap());
 		Maps.push_back(DimasMap());
+		Maps.push_back(LastMap());
 	}
 
 	void LoadMap(GameMap* mainMap, int mapId) {
