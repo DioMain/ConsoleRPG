@@ -1,0 +1,13 @@
+body {
+    background-image: url(Source/BG.png);
+    background-attachment: fixed;
+    color: white;
+    font-family: "Consolas";
+
+    margin-top: 350px;
+}
+
+.descr{
+    font-size: 30px;
+    background-color: rgb(0, 0, 0, 0.35);
+}
