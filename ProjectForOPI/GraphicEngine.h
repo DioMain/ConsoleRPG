@@ -11,8 +11,6 @@ using namespace std;
 
 namespace CE {
 
-	
-
 	// This class contains information about the game map (size, array of symbols), as well as an array of GameObjects used here
 	// Also functions for map manipulate
 	class GameMap
@@ -114,7 +112,6 @@ namespace CE {
 					SetConsoleCursorPosition(hConsole, { x, y });
 					cout << Map[y][x];
 				}
-				//cout << endl;
 			}
 		}
 

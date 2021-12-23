@@ -7,6 +7,7 @@
 #include "Vars.h"
 #include "Compontent.h"
 #include "GameLogic.h"
+#include "Maps.h"
 
 using namespace CE;
 using namespace std;
@@ -43,7 +44,7 @@ namespace Game {
 		system("cls");
 	}
 
-	void Event—ostume() {
+	void EventCostume() {
 
 		system("cls");
 
@@ -102,6 +103,20 @@ namespace Game {
 		system("cls");
 	}
 
+	void EventToMyMap() {
+		system("cls");
+
+		LoadMap(&MainMap, 1);
+	}
+
+	void EventTroll() {
+		system("cls");
+
+		cout << "Nothing"<< endl;
+
+		system("pause");
+		system("cls");
+	}
 
 	void EventUnit() {
 		GameObject* object = Collision::Overlap(&MainMap, &Player);
@@ -112,11 +127,10 @@ namespace Game {
 			if ((*object).tag == "test") EventLucky();
 			if ((*object).tag == "Whip") EventWhip();
 			if ((*object).tag == "Train") EventTrain();
-			//if ((*object).tag == "RunTracker") EventRun();
+			if ((*object).tag == "ToMyMap") EventToMyMap();
+			if ((*object).tag == "None") EventTroll();
 
 			MainMap.deleteGameObject(object);
 		}
-
-
 	}
 }
