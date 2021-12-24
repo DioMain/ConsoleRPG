@@ -62,9 +62,9 @@ void AfterRender() {
 void PastLoad() {
 	std::system("CLS"); // CONSOLE CLEAR //
 
-	SetConsoleColor(CE::whitered);
+	SetConsoleColor(CE::whitered);	
 
-	char mess[] =
+	cout << 
 		"##  ##   ####   ##  ##    ##   #####    #####   ######   ####   #####   ##\n"
 		"##  ##  ##  ##  ##  ##        ##        ##  ##  ##      ##  ##  ##  ##  ##\n"
 		" ####   ##  ##  ##  ##    ##  #####     ##  ##  ######  ######  ##  ##  ##\n"
@@ -72,7 +72,7 @@ void PastLoad() {
 		"  ##    ##  ##  ##  ##    ##      ##    ##  ##  ##      ##  ##  ##  ##    \n"
 		"  ##     ####    ####     ##  #####     #####   ######  ##  ##  #####   ##\n\n\n";
 
-	cout << mess;
+	SetConsoleColor(CE::white);
 
 	Sleep(2000);
 

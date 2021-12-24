@@ -54,7 +54,7 @@ void Load() {
 			Player.position = Vector2(1, 4);
 			break;
 		case 4:
-			Player.position = Vector2(1, 7);
+			Player.position = Vector2(1, 6);
 			break;
 		}
 
