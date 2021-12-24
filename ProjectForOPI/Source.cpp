@@ -64,6 +64,8 @@ int main() { // ONCE IN THE GYM //
 
 	///////////PASTLOAD///////////
 
+	if (IsGameEnd) return 0;
+
 	PastLoad();
 
 	return 0;
