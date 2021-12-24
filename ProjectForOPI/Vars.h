@@ -17,6 +17,7 @@ namespace Game {
 	int MapId = 0;
 
 	bool IsLive = true;
+	bool IsGameEnd = false;
 
 	vector<Enemy> Enemys = vector<Enemy>();
 
@@ -40,5 +41,6 @@ namespace Game {
 		Damage = 80;
 
 		IsLive = true;
+		IsGameEnd = false;
 	}
 }
