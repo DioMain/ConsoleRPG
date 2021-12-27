@@ -355,12 +355,24 @@ namespace Game {
 
 		map.addGameObject(new GameObject(Vector2(44, 23), 'E', "ToDimasMap", ObjectType::action));
 
+		map.addGameObject(new GameObject(Vector2(10, 2), 'C', "Cumpot", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(15, 7), 'S', "Battle2", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(11, 10), 'b', "Battle4", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(7, 5), 'b', "Dumbbell", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(7, 18), '?', "Lucky", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(21, 2), ':', "Train", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(40, 7), 'M', "Battle3", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(31, 12), 'T', "Battle1", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(19, 13), 'p', "Battle5", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(22, 22), 'W', "Whip", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(46, 22), 'p', "Battle5", ObjectType::action));
+
 		map.addGameObject(&Player);
 
 		return map;
 	}
 
-	GameMap AsMap() {
+	GameMap ILMap() {
 		GameMap map(Vector2(50, 25), ' ');
 
 		for (int y = 0; y < map.getSize().y; y++) // WALL GENERATE //
@@ -514,13 +526,13 @@ namespace Game {
 		map.addGameObject(new GameObject(Vector2(30, 23), '#', "Wall", ObjectType::wall));
 		map.addGameObject(new GameObject(Vector2(30, 22), '#', "Wall", ObjectType::wall));
 
-		map.addGameObject(new GameObject(Vector2(10, 4), '*', "Dumbbell", ObjectType::action));
-		map.addGameObject(new GameObject(Vector2(35, 22), 'b', "Costumes", ObjectType::action));
-		map.addGameObject(new GameObject(Vector2(40, 5), 'c', "Cumpot", ObjectType::action));
-		map.addGameObject(new GameObject(Vector2(40, 10), '~', "Whip", ObjectType::action));
-		map.addGameObject(new GameObject(Vector2(30, 10), ':', "Train", ObjectType::action));
-		map.addGameObject(new GameObject(Vector2(3, 20), '?', "None", ObjectType::action));
-		map.addGameObject(new GameObject(Vector2(45, 1), 'E', "ToShMap", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(2, 15), 'B', "Costumes", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(40, 5), '?', "Lucky", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(30, 7), ':', "Train", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(33, 20), 'p', "Battle5", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(7, 21), 'M', "Battle3", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(43, 10), 'T', "Battle1", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(48, 12), 'N', "ToShMap", ObjectType::action));
 		map.addGameObject(&Player);
 
 		return map;
@@ -650,6 +662,15 @@ namespace Game {
 
 		map.addGameObject(new GameObject(Vector2(78, 4), 'E', "ToLastMap", ObjectType::action));
 		map.addGameObject(new GameObject(Vector2(9, 4), 'S', "Battle2", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(13, 1), 'C', "Cumpot", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(17, 4), 'm', "Mask", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(19, 6), 'b', "Battle4", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(15, 2), 'M', "Battle3", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(34, 1), 'T', "Battle1", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(34, 7), '?', "Lucky", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(47, 4), 'S', "Battle2", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(72, 6), '?', "Lucky", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(69, 3), 'C', "Cumpot", ObjectType::action));
 
 		map.addGameObject(&Player);
 
@@ -714,7 +735,7 @@ namespace Game {
 
 	void MapsInisialize() {
 		Maps.push_back(DevMap());
-		Maps.push_back(AsMap());
+		Maps.push_back(ILMap());
 		Maps.push_back(ShMap());
 		Maps.push_back(DimasMap());
 		Maps.push_back(LastMap());
