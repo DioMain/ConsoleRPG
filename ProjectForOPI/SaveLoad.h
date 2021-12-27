@@ -1,22 +1,19 @@
 #pragma once
-#include <vector>
-#include <string>
-#include "iostream"
-#include "fstream"
+#include <iostream>
+#include <fstream>
 #include "Vars.h"
 using namespace std;
 using namespace Game;
 
 void Save() {
-
 	fstream save;
+
 	save.open("Save.txt",fstream::out);
 
 	if (!save.is_open()) {
 		cout << "Error";
 	}
 	else {
-
 		save.write(reinterpret_cast<char*>(&MaxHeal), sizeof(int));
 		save.write(reinterpret_cast<char*>(&MaxStamina), sizeof(int));
 		save.write(reinterpret_cast<char*>(&Heal), sizeof(int));
@@ -25,12 +22,12 @@ void Save() {
 		save.write(reinterpret_cast<char*>(&MapId), sizeof(int));
 	}
 	save.close();
-
 }
 void Load() {
 	fstream load;
 
 	load.open("Save.txt",fstream::in);
+
 	if (!load.is_open()) {
 		cout << "Error";
 	}
@@ -42,9 +39,27 @@ void Load() {
 		load.read(reinterpret_cast<char*>(&Armor), sizeof(int));
 		load.read(reinterpret_cast<char*>(&MapId), sizeof(int));
 
+		switch (MapId) // For start position
+		{
+		case 0:
+			Player.position = Vector2(23, 11);
+			break;
+		case 1:
+			Player.position = Vector2(46, 23);
+			break;
+		case 2:
+			Player.position = Vector2(1, 1);
+			break;
+		case 3:
+			Player.position = Vector2(1, 4);
+			break;
+		case 4:
+			Player.position = Vector2(1, 6);
+			break;
+		}
+
 		LoadMap(&MainMap, MapId);
 	}
-	load.close();
 
-	
+	load.close();
 }

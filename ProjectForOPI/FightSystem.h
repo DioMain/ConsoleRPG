@@ -16,11 +16,19 @@ namespace Game {
 
 	void EnemysUnit()
 	{
-		Enemy BossOfTheGYM(5000, 150, 500, "BossOfTheGYM", "BossOfTheGYM - kind on the outside, cruel on the inside, who is always ready to back you up from behind");
-		Enemy Trainer(500, 10, 50, "Trainer", "If he is not paid, then he is very angry ...\nHe was not paid ...");
+		Enemy BossOfTheGYM(3500, 75, 200, "BossOfTheGYM", "BossOfTheGYM - kind on the outside, cruel on the inside, who is always ready to back you up from behind");
+		Enemy Trainer(500, 25, 90, "Trainer", "If he is not paid, then he is very angry ...\nHe was not paid ...");
+		Enemy Security(850, 30, 100, "Security", "With its protein-filled nose, it feels your ass from far away");
+		Enemy Manager(600, 27, 65, "Manager", "Takes tribute from new visitors, dislikes intruders, very much");
+		Enemy Bodybuilder(1050, 15, 100, "Bodybuilder", "GYM Old, loves protein drinks and himself");
+		Enemy Pimple(245, 10, 30, "pimple", "beginner, wants to show that he is the coolest, usually arrogant");
 
 		Enemys.push_back(BossOfTheGYM);
 		Enemys.push_back(Trainer);
+		Enemys.push_back(Security);
+		Enemys.push_back(Manager);
+		Enemys.push_back(Bodybuilder);
+		Enemys.push_back(Pimple);
 	}
 	
 	int GetDamage(int damage, int armor) {
@@ -31,6 +39,8 @@ namespace Game {
 		std::system("cls");
 
 		cout << enemy.name << " attack you!" << endl;
+
+		Sleep(500);
 
 		std::system("pause");
 		std::system("cls");
@@ -48,12 +58,13 @@ namespace Game {
 			std::system("cls");
 			
 			cout << "<===============Enemy " << enemy.name << "================>" << endl;
-			cout << "HEAL = " << enemy.health << endl;
-			cout << "Last damage = " << lastDamage << endl << endl;
+			cout << "HEAL: " << enemy.health << endl << endl;
+
+			if (lastDamage > 0) cout << "Damage done to you: " << lastDamage << endl << endl;
 
 			cout << "<===============Player================>" << endl;
-			cout << "Heal = " << Heal << endl;
-			cout << "Stamina = " << PlayerStamina << endl << endl;
+			cout << "HEAL: " << Heal << endl;
+			cout << "STAMINA: " << PlayerStamina << endl << endl;
 
 			switch (choise)
 			{
@@ -109,16 +120,42 @@ namespace Game {
 
 						key = _getch();
 
+						int lastPlayerDamange = 0;
+
 						if ((key == 'w' || key == 'W') && attackType > 0) attackType--;
 						else if ((key == 's' || key == 'S') && attackType < 2) attackType++;
 						else if (key == 13) {
 							if (attackType == 2) break;
 							else {
-								if (attackType == 0 && PlayerStamina > 0) { enemy.health -= GetDamage(Damage, enemy.armor); PlayerStamina -= 1; }
-								else if (attackType == 0) { cout << "You dont have necessary stamina points!" << endl; system("pause"); }
+								system("cls");
 
-								if (attackType == 1 && PlayerStamina > 2) { enemy.health -= round((double)GetDamage(Damage, enemy.armor) * 1.3); PlayerStamina -= 3; }
-								else if (attackType == 1) { cout << "You dont have necessary stamina points!" << endl; system("pause"); }
+								if (attackType == 0 && PlayerStamina > 0) { 
+									lastPlayerDamange = GetDamage(Damage, enemy.armor); 
+									enemy.health -= lastPlayerDamange;
+									PlayerStamina -= 1;
+
+									if (lastPlayerDamange > 0) cout << "You inflicted " << lastPlayerDamange << " of damage!" << endl << endl;
+									else cout << "You are too weak to do damage!" << endl << endl;
+
+									Sleep(250);
+
+									system("pause");
+								}
+								else if (attackType == 0) { cout << "You dont have necessary stamina points!" << endl << endl;; Sleep(250); system("pause"); }
+
+								if (attackType == 1 && PlayerStamina > 2) { 
+									lastPlayerDamange = round((double)GetDamage(Damage, enemy.armor) * 1.3);
+									enemy.health -= lastPlayerDamange;
+									PlayerStamina -= 3; 
+
+									if (lastPlayerDamange > 0) cout << "You inflicted " << lastPlayerDamange << " of damage!" << endl << endl;
+									else cout << "You are too weak to do damage!" << endl << endl;
+
+									Sleep(250);
+
+									system("pause");
+								}
+								else if (attackType == 1) { cout << "You dont have necessary stamina points!" << endl << endl;; Sleep(250); system("pause"); }
 
 								lastDamage = GetDamage(enemy.attack, Armor);
 
@@ -156,6 +193,8 @@ namespace Game {
 				system("cls");
 
 				cout << "You winner!!!" << endl;
+
+				Sleep(500);
 
 				system("pause");
 

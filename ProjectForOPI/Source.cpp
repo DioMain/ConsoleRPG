@@ -1,5 +1,6 @@
 #include <iostream>
 #include <conio.h>
+#include <Windows.h>
 #include "DefaultMath.h"
 #include "GraphicEngine.h"
 #include "Physics.h"
@@ -26,7 +27,10 @@ int main() { // ONCE IN THE GYM //
 
 	SetConsoleCursorInfo(hConsole, &cursorInfo);
 
-	setlocale(LC_ALL, "ru");
+	CE::SetConsoleColor(CE::white);
+
+	SetConsoleCP(CP_UTF8);
+	SetConsoleOutputCP(CP_UTF8);
 	srand((int)time(0));
 	
 	EnemysUnit();
@@ -39,6 +43,8 @@ int main() { // ONCE IN THE GYM //
 
 	while (IsLive) 
 	{
+		SetConsoleCursorInfo(hConsole, &cursorInfo);
+
 		///////////BEFORE RENDER///////////
 
 		BeforeRender();
@@ -57,6 +63,8 @@ int main() { // ONCE IN THE GYM //
 	}
 
 	///////////PASTLOAD///////////
+
+	if (IsGameEnd) return 0;
 
 	PastLoad();
 
