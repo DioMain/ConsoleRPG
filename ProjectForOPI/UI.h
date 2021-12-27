@@ -65,7 +65,7 @@ namespace Game {
 		switch (choise)
 		{
 		case 0:
-			Player.position = Vector2(46, 23);
+			Player.position = Vector2(47, 23);
 
 			ResetVars();
 
