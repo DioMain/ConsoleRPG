@@ -38,7 +38,7 @@ namespace Game {
 
 		Heal = 1000;
 		Armor = 25;
-		Damage = 999999999;
+		Damage = 80;
 
 		IsLive = true;
 		IsGameEnd = false;
