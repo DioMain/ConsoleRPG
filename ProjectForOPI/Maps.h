@@ -355,6 +355,19 @@ namespace Game {
 
 		map.addGameObject(new GameObject(Vector2(44, 23), 'E', "ToDimasMap", ObjectType::action));
 
+		map.addGameObject(new GameObject(Vector2(10, 2), 'C', "Cumpot", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(15, 7), 'S', "Battle2", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(15, 7), 'S', "Battle2", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(11, 10), 'b', "Battle4", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(7, 5), 'b', "Dumbbell", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(7, 18), '?', "Lucky", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(21, 2), ':', "Train", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(40, 7), 'M', "Battle3", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(31, 12), 'T', "Battle1", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(19, 13), 'p', "Battle5", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(22, 22), 'W', "Whip", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(46, 22), 'p', "Battle5", ObjectType::action));
+
 		map.addGameObject(&Player);
 
 		return map;
@@ -524,7 +537,7 @@ namespace Game {
 		map.addGameObject(new GameObject(Vector2(33, 20), 'p', "Battle5", ObjectType::action));
 		map.addGameObject(new GameObject(Vector2(7, 21), 'M', "Battle3", ObjectType::action));
 		map.addGameObject(new GameObject(Vector2(43, 10), 'T', "Battle1", ObjectType::action));
-		map.addGameObject(new GameObject(Vector2(48, 12), 'N', "ToMyMap", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(48, 12), 'N', "ToShMap", ObjectType::action));
 		map.addGameObject(&Player);
 
 		return map;
@@ -654,6 +667,15 @@ namespace Game {
 
 		map.addGameObject(new GameObject(Vector2(78, 4), 'E', "ToLastMap", ObjectType::action));
 		map.addGameObject(new GameObject(Vector2(9, 4), 'S', "Battle2", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(13, 1), 'C', "Cumpot", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(17, 4), 'm', "Mask", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(19, 6), 'b', "Battle4", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(15, 2), 'M', "Battle3", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(34, 1), 'T', "Battle1", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(34, 7), '?', "Lucky", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(47, 4), 'S', "Battle2", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(72, 6), '?', "Lucky", ObjectType::action));
+		map.addGameObject(new GameObject(Vector2(70, 3), 'C', "Cumpot", ObjectType::action));
 
 		map.addGameObject(&Player);
 

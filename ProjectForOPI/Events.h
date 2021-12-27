@@ -74,6 +74,21 @@ namespace Game {
 		system("cls");
 	}
 
+	void EventMask() {
+
+		system("cls");
+
+		cout << "You get BDSM mask. You get 7 Armor points and 4 Max Stamina point" << endl;
+		Armor += 7;
+		MaxStamina += 4;
+
+
+		Sleep(500);
+
+		system("pause");
+		system("cls");
+	}
+
 	void EventCumpot() {
 
 		system("cls");
@@ -260,13 +275,13 @@ namespace Game {
 			if ((*object).tag == "Costumes") EventCostume();
 			if ((*object).tag == "Cumpot") EventCumpot();
 			if ((*object).tag == "Costumes") EventCostume();
-			if ((*object).tag == "Lucky") EventLucky();
 			if ((*object).tag == "Whip") EventWhip();
 			if ((*object).tag == "Train") EventTrain();
+			if ((*object).tag == "Mask") EventMask();
 			if ((*object).tag == "EventWarningTheBoss") EventWarningTheBoss();
 			if ((*object).tag == "ToShMap") EventToShMap();
 			if ((*object).tag == "ToDimasMap") EventToDimasMap();
-			if ((*object).tag == "ToAsMap") EventToAsMap();
+			if ((*object).tag == "ToAsMap") EventToILMap();
 			if ((*object).tag == "ToLastMap") EventToLastMap();
 			if ((*object).tag == "GameEnd") GameEnd();
 			if ((*object).tag == "None") EventTroll();
