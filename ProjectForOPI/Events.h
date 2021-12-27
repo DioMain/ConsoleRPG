@@ -272,7 +272,6 @@ namespace Game {
 		if ((*object).type == ObjectType::action) {
 			if ((*object).tag == "Lucky") EventLucky();
 			if ((*object).tag == "Dumbbell") EventDumbbell();
-			if ((*object).tag == "Costumes") EventCostume();
 			if ((*object).tag == "Cumpot") EventCumpot();
 			if ((*object).tag == "Costumes") EventCostume();
 			if ((*object).tag == "Whip") EventWhip();

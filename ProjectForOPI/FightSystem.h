@@ -16,7 +16,7 @@ namespace Game {
 
 	void EnemysUnit()
 	{
-		Enemy BossOfTheGYM(3500, 75, 220, "BossOfTheGYM", "BossOfTheGYM - kind on the outside, cruel on the inside, who is always ready to back you up from behind");
+		Enemy BossOfTheGYM(3500, 75, 200, "BossOfTheGYM", "BossOfTheGYM - kind on the outside, cruel on the inside, who is always ready to back you up from behind");
 		Enemy Trainer(500, 25, 90, "Trainer", "If he is not paid, then he is very angry ...\nHe was not paid ...");
 		Enemy Security(850, 30, 100, "Security", "With its protein-filled nose, it feels your ass from far away");
 		Enemy Manager(600, 27, 65, "Manager", "Takes tribute from new visitors, dislikes intruders, very much");
