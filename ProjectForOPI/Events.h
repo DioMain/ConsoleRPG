@@ -126,6 +126,31 @@ namespace Game {
 		system("cls");
 	}
 
+	void EventTroll() {
+		system("cls");
+
+		cout << "Nothing" << endl;
+
+		system("pause");
+		system("cls");
+	}
+
+	void EventWarningTheBoss() {
+		system("cls");
+
+		SetConsoleColor(CE::whitered);
+
+		cout << "Warning!!!\nIt is the Boss of this gym\nYou need to be extremely careful with this brow!\n\n";
+
+		Sleep(500);
+
+		SetConsoleColor(CE::white);
+
+		system("pause");
+
+		system("cls");
+	}
+
 	void EventToShMap() {
 		system("cls");
 
@@ -146,14 +171,7 @@ namespace Game {
 		Save();
 	}
 
-	void EventTroll() {
-		system("cls");
-
-		cout << "Nothing"<< endl;
-
-		system("pause");
-		system("cls");
-	}
+	
 
 	void EventToILMap() {
 		system("cls");
@@ -168,7 +186,7 @@ namespace Game {
 	void EventToLastMap() {
 		system("cls");
 
-		Player.position = Vector2(1, 7);
+		Player.position = Vector2(1, 6);
 
 		LoadMap(&MainMap, 4);
 
@@ -199,6 +217,40 @@ namespace Game {
 		Fight(Enemys[5]);
 	}
 
+	void GameEnd() {
+		system("cls");
+
+		SetConsoleColor(CE::whitegreen);
+
+		cout << "This is a demo version of the game and that's all for now." << endl << endl;
+
+		SetConsoleColor(CE::red);
+
+		cout <<
+			" ####    #### \n"
+			"######  ######\n"
+			"##############\n"
+			" ############ \n"
+			"  ##########  \n"
+			"   ########   \n"
+			"    ######    \n"
+			"     ####     \n"
+			"      ##      \n\n\n";
+
+		SetConsoleColor(CE::whitegreen);
+
+		cout << "Thank you for playing!" << endl << endl << endl;
+
+		Sleep(1000);
+
+		SetConsoleColor(CE::white);
+
+		system("pause");
+
+		IsLive = false;
+		IsGameEnd = true;
+	}
+
 	void EventUnit() {
 		GameObject* object = Collision::Overlap(&MainMap, &Player);
 
@@ -207,10 +259,16 @@ namespace Game {
 			if ((*object).tag == "Dumbbell") EventDumbbell();
 			if ((*object).tag == "Costumes") EventCostume();
 			if ((*object).tag == "Cumpot") EventCumpot();
+			if ((*object).tag == "Costumes") EventCostume();
+			if ((*object).tag == "Lucky") EventLucky();
 			if ((*object).tag == "Whip") EventWhip();
 			if ((*object).tag == "Train") EventTrain();
-			if ((*object).tag == "ToMyMap") EventToShMap();
-			if ((*object).tag == "ToDimas") EventToDimasMap();
+			if ((*object).tag == "EventWarningTheBoss") EventWarningTheBoss();
+			if ((*object).tag == "ToShMap") EventToShMap();
+			if ((*object).tag == "ToDimasMap") EventToDimasMap();
+			if ((*object).tag == "ToAsMap") EventToAsMap();
+			if ((*object).tag == "ToLastMap") EventToLastMap();
+			if ((*object).tag == "GameEnd") GameEnd();
 			if ((*object).tag == "None") EventTroll();
 			if ((*object).tag == "Battle0") Battle0(); // BossOfTheGYM
 			if ((*object).tag == "Battle1") Battle1(); // Trainer
