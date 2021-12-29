@@ -63,7 +63,7 @@ namespace Game {
 
 		system("cls");
 
-		cout << "You get BDSM Costume. You get 20 Armor points and 10 Max Stamina point" << endl;
+		cout << "You get Leather Costume. You get 20 Armor points and 10 Max Stamina point" << endl;
 		Armor += 20;
 		MaxStamina += 10;
 
@@ -78,7 +78,7 @@ namespace Game {
 
 		system("cls");
 
-		cout << "You get BDSM mask. You get 7 Armor points and 4 Max Stamina point" << endl;
+		cout << "You get Leather Mask. You get 7 Armor points and 4 Max Stamina point" << endl;
 		Armor += 7;
 		MaxStamina += 4;
 
@@ -93,7 +93,7 @@ namespace Game {
 
 		system("cls");
 
-		cout << "You drink cumpot. You get Heal 500" << endl;
+		cout << "You drink CUMPOT. You get Heal 500" << endl;
 		Heal = Heal + 500;
 
 
