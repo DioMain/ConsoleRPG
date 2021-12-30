@@ -186,8 +186,6 @@ namespace Game {
 		Save();
 	}
 
-	
-
 	void EventToILMap() {
 		system("cls");
 
